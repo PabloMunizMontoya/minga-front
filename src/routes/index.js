@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Carousel from '../components/carousel.jsx'
+import Newauthor from "./newAutor/author.jsx";
 import Layout from "../layouts/Layout";
 
 export const indexRouter = createBrowserRouter([
@@ -10,9 +11,12 @@ export const indexRouter = createBrowserRouter([
         {
           path: "/",
           element: <Carousel />
+        }, {
+          path: "/authors",
+          element:<Newauthor/>,
         }
       ]
-    },
+    }
   
   ])
 
