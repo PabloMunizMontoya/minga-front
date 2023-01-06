@@ -20,20 +20,6 @@ export default function Carousel() {
     datos()
   },[])
   
-  const obtenerCategoria = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/categories');
-      console.log('axios', response.data.response)
-      let myCategories = response.data.response
-      setCategories(myCategories)
-    } catch(err) {
-      console.log(err);
-    }
-  }
-  
-  useEffect(() => {
-    obtenerCategoria()
-  }, [])
 
   useEffect(() => {
   let idInterval =  setInterval(() => {

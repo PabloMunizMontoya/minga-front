@@ -1,5 +1,4 @@
 import React from "react";
-import { Link as Anchor } from "react-router-dom";
 import './header.css'
 
 
@@ -9,23 +8,20 @@ export default function Header() {
 
   return (
     <div >
-      <header>
-
-
-        
+      <header> 
 
         <div className="section">
-          <span>
-            Anunciamos nuestra próxima ronda de financiación. <a>Leer más →</a>
+          <span>           
+              We announce our next round of funding. <a>Reed More →</a>
           </span>
-          <h1>Tu tienda de comics favorita</h1>
+          <h1>Your favorite comic shop</h1>
           <p>
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
             lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
             fugiat aliqua.
           </p>
           <a className="button-started" href="#main">
-            Empezar →{" "}
+            Start →{" "}
           </a>
         </div>
       </header>
