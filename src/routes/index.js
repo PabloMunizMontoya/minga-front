@@ -13,8 +13,8 @@ export const indexRouter = createBrowserRouter([
           element: <Carousel />
         }, {
           path: "/authors",
-          element:<Newauthor/>,
-        }
+          element:<Newauthor/>
+        },
       ]
     }
   
