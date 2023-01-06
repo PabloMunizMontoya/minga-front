@@ -1,5 +1,4 @@
 import React from "react";
-import { Link as Anchor } from "react-router-dom";
 import './header.css'
 
 

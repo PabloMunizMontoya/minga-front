@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link as Anchor } from 'react-router-dom'
 import './footer.css'
+import { Link as Anchor } from 'react-router-dom'
 export default function Footer() {
   return (
     <div>          
@@ -17,9 +17,9 @@ export default function Footer() {
       </div>
       <div className='footer2'>
       <div className='info'>
-        <p>About Us</p>
-        <p>Comics</p>
-        <p>Mangas</p>
+        <a >About Us</a>
+        <a>Comics</a>
+        <a>Mangas</a>
       </div>
       <div className='links'>
         <a><img src="/assets/messenger.png"  className='logos' alt=""/></a>

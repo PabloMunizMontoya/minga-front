@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 
-const Form = () => {
+const newCompany = () => {
   const inputName = useRef("")
   const inputLogo = useRef("")
 const inputWebsite = useRef("")
@@ -66,4 +66,4 @@ const inputId = useRef("")
   }
 
 
-export default Form
+export default newCompany
