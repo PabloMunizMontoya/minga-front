@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Carousel from '../components/carousel.jsx'
 import Layout from "../layouts/Layout";
-import newCompany from './NewCompany/NewCompany'
+import NewCompany from './newCompany/NewCompany.jsx'
 
 
 export const indexRouter = createBrowserRouter([
@@ -14,8 +14,8 @@ export const indexRouter = createBrowserRouter([
           element: <Carousel />
         },
         {
-          path: "/newCompany",
-          element: <newCompany />
+          path: "/NewCompany",
+          element: <NewCompany />
         }
       ]
     },

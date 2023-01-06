@@ -1,10 +1,12 @@
 import './form.css'
 import React, { useRef } from 'react'
 import axios from 'axios'
+import  alertActions from '../../store/alert/actions.js'
+import { useDispatch } from 'react-redux'
 
-
-
-const newCompany = () => {
+const NewCompany = () => {
+  const {mingaAlert} = alertActions
+  const dispatch = useDispatch()
   const inputName = useRef("")
   const inputLogo = useRef("")
 const inputWebsite = useRef("")
@@ -20,9 +22,13 @@ const inputId = useRef("")
      description: inputDescription.current.value,
      user_id: inputId.current.value
    }
-    axios.post("http://localhost:8080/api/companies", data)
-            .then((e) => console.log(e))
-            .catch((error) => console.log(error));
+        
+      axios.post("http://localhost:8000/api/companies", data)
+            .then((e) => dispatch(mingaAlert("Done")))
+            .catch(error => { dispatch(mingaAlert(error.response.data.response))
+            // dispatch(mingaAlert("Done"))
+            console.log(error.response.data.response) 
+             })
 
   }
 
@@ -66,4 +72,4 @@ const inputId = useRef("")
   }
 
 
-export default newCompany
+export default NewCompany
