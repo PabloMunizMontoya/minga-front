@@ -1,15 +1,15 @@
 import React from 'react'
-import { Link as Anchor } from 'react-router-dom'
 import './footer.css'
+import { Link as Anchor } from 'react-router-dom'
 export default function Footer() {
   return (
-    <div>          
+    <div>
     <footer>
       <div className='background-footer'>
 
       </div>
       <div className='footer1'>
-      <p className='subs'>Suscribite</p>
+      <p className='subs'>Subscribe</p>
       <div>
       <input type="email" className='input' placeholder='Enter your email'/>
       <input type="submit" className='submit' value='Submit'/>
@@ -17,9 +17,9 @@ export default function Footer() {
       </div>
       <div className='footer2'>
       <div className='info'>
-        <p>About Us</p>
-        <p>Comics</p>
-        <p>Mangas</p>
+        <a className='anchorFooter' >About Us</a>
+        <a className='anchorFooter'>Comics</a>
+        <a className='anchorFooter'>Mangas</a>
       </div>
       <div className='links'>
         <a><img src="/assets/messenger.png"  className='logos' alt=""/></a>
@@ -30,13 +30,13 @@ export default function Footer() {
       </div>
       <div className='footer3'>
       <div>
-        <p>© 2022 Minga. Todos los derechos reservados.</p>
+        <p>© 2022 Minga. All rights reserved.</p>
       </div>
       <div>
       </div>
       <div>
-      <p>Terminos y Condiciones</p>
-        <p>Politica de privacidad</p>
+      <p className='pFooter'>Terms and Conditions</p>
+        <p className='pFooter'>Privacy Policy</p>
       </div>
       </div>
   </footer>
