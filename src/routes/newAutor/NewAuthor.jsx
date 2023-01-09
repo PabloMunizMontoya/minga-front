@@ -2,7 +2,7 @@ import React, { useRef} from 'react'
 import './newauthor.css'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
-//import  alertActions from '../../store/alert/actions.js'
+import  alertActions from '../../store/alert/actions.js'
 
 export default function Newauthor() {
 const { mingaAlert } = alertActions
@@ -27,6 +27,7 @@ let guardarData= (e) => {
   }
   axios.post("http://localhost:8000/api/authors", data)
   .then(e =>console.log(e))
+  dispatch(mingaAlert("Registrado"))
   .catch(error => {
     dispatch(mingaAlert(error.response.data.response))
     //dispatch(mingaAlert("Done"))

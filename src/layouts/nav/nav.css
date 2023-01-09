@@ -1,7 +1,12 @@
-
-
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 .imgLogo{
     height: 40px;
+    padding-top: 0.5rem;
+    box-sizing: content-box;
 }
 
 nav {
@@ -10,7 +15,7 @@ nav {
     opacity: 1;
     z-index: 10;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
 }
 .menuButton{
@@ -31,10 +36,7 @@ nav {
     width: 10%;
     flex-direction: column;
     justify-content: center;
-    margin-top: 3rem;
-    padding: 1rem;
-    align-items: center;
-    border-radius: 15px;
+    text-align: center;
   }
 
 .buton{
@@ -47,4 +49,42 @@ nav {
     height: 30%;
     display: flex;
     align-items: center;
+}
+.activo{
+  padding-top: 7%;
+}
+.items{
+  margin: 5px;
+  font-weight: bolder;
+}
+.items:hover{
+  color: rgb(189, 189, 189);
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+  nav{
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .menuButton{
+    width: 25%;
+  }
+  .imgLogo{
+    padding-top: 5%;
+  }
+  .activo{
+    padding: 0;
+    justify-content: center;
+  }
+  .navItems{
+    margin-top: 15%;
+    width: 25%;
+  }
+  .items{
+    margin: 5px;
+    font-weight: bold;
+  }
+  .items:hover{
+    color: rgb(189, 189, 189);
+  }
 }

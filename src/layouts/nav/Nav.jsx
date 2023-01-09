@@ -14,7 +14,7 @@ export default function Nav() {
     <nav >
      
     <Anchor to={"/"}><img className='imgLogo' src="/assets/logo1.png" alt="" /></Anchor>
-
+ 
     <button onClick={handleMenu} className="menuButton">Menu</button>
         {
           variable
@@ -22,9 +22,9 @@ export default function Nav() {
           (
             <nav className="activo">
               <div className="navItems">
-              <Anchor to={"/"}>Home</Anchor>
-              <Anchor to={"/comics"}>Comics</Anchor>
-              <Anchor to={"/form"}>Form</Anchor>
+              <Anchor className='items' to={"/"}>Home</Anchor>
+              <Anchor className='items'  to={"/comics"}>Comics</Anchor>
+              <Anchor className='items'  to={"/form"}>Form</Anchor>
               </div>
           </nav>
           )

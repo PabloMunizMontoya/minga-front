@@ -25,7 +25,28 @@
     background-color: rgb(149, 147, 147);
 }
 .h1Author{
-   text-align: center;
-   padding: 50px;
+    text-align: center;
+    padding: 50px;
     color: black;
+}
+
+@media (min-width: 320px) and (max-width: 1438px){
+    .inputAutor{
+        color: black;
+        background-color: rgb(234, 234, 234);
+        width: 35vw;
+        height: 6vh;
+        border:none;
+        border-bottom: 1px solid gray;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 1438px){
+    .buttonSubmit{
+        border: none;
+        background-color: rgb(116, 116, 116);
+        width: 15vw;
+        height: 5vh;
+        border-radius: 50px;
+    }
 }
