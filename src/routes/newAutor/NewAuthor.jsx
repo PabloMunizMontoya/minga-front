@@ -17,19 +17,20 @@ const inputPhoto = useRef("");
 let guardarData= (e) => {
   e.preventDefault();
   let data = {
-      name: inputName.current.value,
-      last_name:inputLastName.current.value,
-      city:inputCity.current.value,
-      country:inputCountry.current.value,
-      date: inputDate.current.value,
-      photo:inputPhoto.current.value,
-      user_id: "63ac47d8b4db2f7baacad498"
+    name: inputName.current.value,
+    last_name:inputLastName.current.value,
+    city:inputCity.current.value,
+    country:inputCountry.current.value,
+    date: inputDate.current.value,
+    photo: inputPhoto.current.value,
+    user_id: "63ac47d8b4db2f7baacad498"
   }
   axios.post("http://localhost:8000/api/authors", data)
   .then(e =>console.log(e))
+  dispatch(mingaAlert("registered"))
   .catch(error => {
     dispatch(mingaAlert(error.response.data.response))
-   // dispatch(mingaAlert("Done"))
+    //dispatch(mingaAlert("Done"))
   }
   )
 
