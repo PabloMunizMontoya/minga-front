@@ -4,7 +4,7 @@ import  alertActions from '../../store/alert/actions.js'
 import React, {useRef}  from 'react'
 import './chapters.css'
 
-export default function Chapters() {
+export default function NewChapter() {
   const {mingaAlert} = alertActions
   const dispatch = useDispatch()
   const inputTitle = useRef('')

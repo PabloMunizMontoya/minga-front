@@ -3,7 +3,8 @@ import Carousel from '../components/carousel.jsx'
 import Layout from "../layouts/Layout";
 import Comments from "../components/comments/Comments.jsx";
 import NewComic from "./NewComic/NewComic.jsx"
-import Chapters from "./Newchapters/Newchapters.jsx";
+import NewAuthor from "./NewAuthor/NewAuthor.jsx"
+import NewChapter from "./Newchapter/Newchapter.jsx";
 
 export const indexRouter = createBrowserRouter([
     {
@@ -18,10 +19,13 @@ export const indexRouter = createBrowserRouter([
           element: <MyComics />
         },{
           path :"/new-comic",
-          element: <AddNewComic />
+          element: <NewComic />
         },{
-          path: "/chapters",
-          element: <Chapters/>
+          path :"/new-author",
+          element: <NewAuthor />
+        },{
+          path: "/new-chapter",
+          element: <NewChapter/>
         },{
           path: "/comments",
           element: <Comments />
