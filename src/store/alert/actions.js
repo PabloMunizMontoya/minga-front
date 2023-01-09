@@ -2,9 +2,9 @@ import { createAction } from "@reduxjs/toolkit";
 
 const mingaAlert = createAction(
     "mingaAlert", 
-    (data) => {
+    (datos ) => {
 /*         console.log(data) */
-        return {payload: data}
+        return {payload: datos}
     }
 )
 const alertActions = {mingaAlert}

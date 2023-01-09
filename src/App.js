@@ -4,11 +4,13 @@ import "./App.css";
 
 import { Provider } from "react-redux";
 import store from "./store/store.js";
+
 function App() {
-  return (
-            <Provider store={store}>
-              <RouterProvider router={indexRouter}/>
-            </Provider>
+  return (     
+
+      <Provider store={store}>
+          <RouterProvider router={indexRouter}/>
+      </Provider>
   );
 }
 

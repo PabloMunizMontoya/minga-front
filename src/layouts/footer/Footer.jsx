@@ -15,9 +15,9 @@ export default function Footer() {
       </div>
       <div className='footer2'>
       <div className='info'>
-        <a className='anchorFooter' >About Us</a>
-        <a className='anchorFooter'>Comics</a>
-        <a className='anchorFooter'>Mangas</a>
+        <a >About us</a>
+        <a>Comics</a>
+        <a>Mangas</a>
       </div>
       <div className='links'>
         <a><img src="/assets/messenger.png"  className='logos' alt=""/></a>
