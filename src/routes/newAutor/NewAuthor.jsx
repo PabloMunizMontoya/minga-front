@@ -26,10 +26,10 @@ let guardarData= (e) => {
     user_id: "63ac47d8b4db2f7baacad498"
   }
   axios.post("http://localhost:8000/api/authors", data)
-  .then(e =>console.log(e))
-  dispatch(mingaAlert("Done"))
+  .then((e) =>dispatch(mingaAlert("Done")))
   .catch(error => {
     dispatch(mingaAlert(error.response.data.response))
+    //dispatch(mingaAlert("Done"))
   }
   )
 
