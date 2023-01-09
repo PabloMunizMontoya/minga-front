@@ -48,20 +48,7 @@ span > a {
   gap: 1rem;
   height: 100%;
 }
-.button-started {
-  padding: 0.6rem 1rem;
-  background-color: #4338ca;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  transition: 3s ease-in-out;
-  -webkit-transition: 3s ease-in-out;
-  -moz-transition: 3s ease-in-out;
-  -ms-transition: 3s ease-in-out;
-  -o-transition: 3s ease-in-out;
-}
+
 #main {
   transition: 1s ease-in-out;
 }

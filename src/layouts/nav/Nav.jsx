@@ -24,7 +24,8 @@ export default function Nav() {
               <div className="navItems">
               <Anchor className='items' to={"/"}>Home</Anchor>
               <Anchor className='items'  to={"/comics"}>Comics</Anchor>
-              <Anchor className='items'  to={"/form"}>Form</Anchor>
+              <Anchor className='items'  to={"/mycomics"}>My comics</Anchor>
+              <Anchor className='items'  to={"/"}>Logout</Anchor>
               </div>
           </nav>
           )
