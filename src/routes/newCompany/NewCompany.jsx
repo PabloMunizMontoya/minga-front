@@ -1,4 +1,4 @@
-import './form.css'
+import './newcompany.css'
 import React, { useRef } from 'react'
 import axios from 'axios'
 import  alertActions from '../../store/alert/actions.js'
