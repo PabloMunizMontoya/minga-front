@@ -21,7 +21,7 @@ export default function Alerts() {
         })
     } */
     if(view){
-      toast(typeof messages === "string"? messages : messages = messages?.map(message => message.message).join("<br>"),
+      toast(typeof messages === "string"? messages : messages = messages?.map(message => message.message).join(),
       {
         position: "top-right",
         autoClose: 5000,
@@ -37,8 +37,6 @@ export default function Alerts() {
   return (
 
     <div>
-{/*         {typeof messages === "string"? messages : messages = messages?.map(message => message.message).join("<br>")}
-        {view && messages} */}
         <ToastContainer/>
 
     </div>

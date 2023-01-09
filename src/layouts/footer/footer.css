@@ -40,9 +40,10 @@ footer{
 }
 .input{
     height: 7vh;
-}
+} 
 .subs{
     font-size: 27px;
+    font-weight: bold;
     color: black;
 }
 .submit{
@@ -76,4 +77,45 @@ footer{
 
 .anchorFooter{
     color: black;
+}
+@media (min-width: 320px) and (max-width: 767px){
+    .input{
+        font-size: 10px;
+        width: 50%;
+    }
+    .submit{
+        width: 30%;
+    }
+    .footer1{
+        display: flex;
+    }
+    .subs{
+        width: 50%;
+        text-align: center;
+    }
+    .inputdiv{
+        width: 50%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+    .anchorFooter{
+        font-size: 13px;
+    }
+    .footer3{
+    display: flex;
+    
+    }
+    .copyright{
+        width: 50%;
+    }
+    .pCopyright{
+        text-align: center;
+    }
+    .terms{
+        width: 50%;
+    }
+    .pFooter{
+        text-align: center;
+    }
 }
