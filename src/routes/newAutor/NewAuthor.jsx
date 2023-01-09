@@ -30,7 +30,6 @@ let guardarData= (e) => {
   dispatch(mingaAlert("Done"))
   .catch(error => {
     dispatch(mingaAlert(error.response.data.response))
-    //dispatch(mingaAlert("Done"))
   }
   )
 
