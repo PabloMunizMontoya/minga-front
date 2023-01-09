@@ -3,7 +3,6 @@ import Carousel from '../components/carousel.jsx'
 import Newauthor from "./newAutor/NewAuthor.jsx";
 import Layout from "../layouts/Layout";
 
-
 export const indexRouter = createBrowserRouter([
     {
       path: "/",
