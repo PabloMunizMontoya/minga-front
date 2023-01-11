@@ -39,9 +39,6 @@ export const indexRouter = createBrowserRouter([
         },{
           path: "/comic/:id",
           element: <Comic/>
-        },{
-          path: "/chapters",
-          element: <Chapters/>
         }
       ]
     },

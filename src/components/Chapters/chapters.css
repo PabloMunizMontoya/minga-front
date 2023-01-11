@@ -1,0 +1,17 @@
+.title{
+    margin-left: 1rem;
+    color: black;
+}
+.chaptercontent{
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px black;
+    display: flex;
+    align-items: center;
+    height: 8vh;
+    width: 20vw;
+    background-color: white;
+    margin: 10px;
+}
+.content{
+    display: flex;
+}
