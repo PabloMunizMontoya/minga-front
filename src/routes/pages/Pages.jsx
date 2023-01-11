@@ -57,17 +57,16 @@ function Pages() {
       dispatch(getChapter({comic: currentParams.comic_id, chapter: currentParams.order}))
     }
   }, [searchParams])
+  console.log(chapterStore);
   const getPageImages = () => {
     if (chapterStore.chapter?.length === 0){
       return <p>Loading...</p>
     }else {
-      return chapterStore.chapter.response[0].pages?.map((page)=> ( 
+      return chapterStore.chapters.response[0].pages?.map((page)=> ( 
         <div className='imageContainer' key={page}> <img src={page} alt="img" /></div>
       ))
     }
   }
- 
-
 return (
   <>
   <Nav/>
