@@ -37,12 +37,12 @@ export const indexRouter = createBrowserRouter([
           path: "/comments",
           element: <Comments />
         },
-        {
-          path: "/pages",
-          element: <Pages/>
-        }
       ]
     },
+    {
+      path: "/pages/:id",
+      element: <Pages/>
+    }
   
   ])
 

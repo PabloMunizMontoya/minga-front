@@ -1,49 +1,46 @@
-import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "axios"
+import { createAsyncThunk } from "@reduxjs/toolkit"
 
-const newChapter = createAsyncThunk("newChapter", async (chapter) =>{
+
+const newChapter = createAsyncThunk("newChapter", async (chapter) => {
     try {
-        const response = await axios.post (
+        const response = await axios.post(
             "http://localhost:8000/api/chapters",
-            chapter
+            chapter,
         )
         return {
-            response: {chapter: response.data},
-            message: "Chapter created successfully ",
+            response: { chapter: response.data },
+            message: "Chapter created successfully",
         }
-
     } catch (error) {
         return {
-            response: {chapter: error.response.data},
+            response: { chapter: error.response.data },
             message: "Error creating chapter",
         }
     }
-
 });
 
-
-
-const getChapter = createAsyncThunk("getChapter", async ({comic: comic_id, chapter: order}) => {
+const getChapterDetails = createAsyncThunk("getChapter", async (_id) => {
     try {
         const response = await axios.get(
-            `http://localhost:8000/api/chapters/?comic_id=${comic_id}&order=${order}`
+            `http://localhost:8000/api/chapters/${_id}`
         )
+        console.log(response);
         return {
-            response: {chapter: response.data},
+            response: {chapter: response.data.response.pages},
             message: "Chapter successfully obtained!"
         }
-    } catch (error){
+    } catch (error) {
         return {
             response: {chapter: error.response.data},
-            message: "Error: chapter cannot be obtained"
+            message: "Error: Chapter cannot be obtained."
         }
     }
+})
 
-} )
-
-const chapterAction = {
+const chapterActions = {
     newChapter,
-    getChapter,
+    getChapterDetails,
 }
 
-export default chapterAction
+export default chapterActions
