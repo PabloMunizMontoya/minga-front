@@ -1,3 +1,26 @@
 .header {
     background-color: #ebebeb;
 }
+
+.titleContainer{
+    background-color: black;
+    margin-top: 68px;
+    color: #ebebeb;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.comiPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentContainer{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}

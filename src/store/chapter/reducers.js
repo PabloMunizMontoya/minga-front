@@ -1,37 +1,38 @@
+import chapterActions from "./actions";
 import { createReducer } from "@reduxjs/toolkit";
-import chapterAction from "./actions";
 
-const { newChapter, getChapter} = chapterAction;
-const initialState = { chapter: [], message: ""};
+const { newChapter, getChapterDetails } = chapterActions;
 
-const chapterReducer = createReducer(initialState, (builder) =>{
+const initialState = { chapters: [], message: "" };
+
+const chapterReducer = createReducer(initialState, (builder) =>  {
     builder
-    .addCase(newChapter.fulfilled, (state,action) =>{
+    .addCase(newChapter.fulfilled, (state, action) => {
         let newState = {
-            chapter: action.payload.response.chapter,
-            message: action.payload.message
+            chapters: action.payload.response.chapter,
+            message: action.payload.message,
         }
         return newState
     })
-    .addCase(newChapter.rejected,(state,action) =>{
-        let newState = {
+    .addCase(newChapter.rejected, (state, action) => {
+        let newState =  {
             message: "ERROR"
         }
         return newState
     })
-    .addCase(getChapter.fulfilled, (state,action)=>{
+    .addCase(getChapterDetails.fulfilled, (state, action) => {
         let newState = {
             chapters: action.payload.response.chapter,
             message: action.payload.message
         }
         return newState
     })
-    .addCase(getChapter.rejected, (state,action) =>{
+    .addCase(getChapterDetails.rejected, (state, action) => {
         let newState = {
-            message: "ERROR Loading Chapter"
+            message: "Error Loading Chapter"
         }
         return newState
     })
 })
 
-export default chapterReducer;
+export default chapterReducer
