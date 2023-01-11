@@ -12,7 +12,7 @@
 .comicImage{
     height: 30vh;
     border-radius: 20px;
-    width: 50%;
+    width: 50vw;
     background-color: white;
 }
 .description{

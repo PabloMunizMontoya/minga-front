@@ -6,6 +6,7 @@ const getChapter = createAsyncThunk(
     async (chapter) => {
         try{
             const response= await axios.get(`http://localhost:8000/api/chapters?comic_id=${chapter}`)
+            console.log(response)
             return {
                 response: {chapters: response.data},
                 message: "Chapter obtained"
@@ -14,7 +15,7 @@ const getChapter = createAsyncThunk(
         catch(error){
             console.log(error)
             return {
-                response: {chapter: error.response.data},
+                response: {chapters: error.response.data},
                 message: "Error chapter not found"
             }
         }

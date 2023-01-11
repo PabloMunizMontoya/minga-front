@@ -15,7 +15,7 @@ const chapterReducer = createReducer(
                 .addCase(getChapter.fulfilled,
                     (state, action) => {
                         let newState = {
-                            chapters: action.payload.response.chapter,
+                            chapters: action.payload.response.chapters,
                             message: action.payload.message
                         }
                         return newState

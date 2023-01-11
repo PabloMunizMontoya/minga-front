@@ -21,7 +21,6 @@ export default function Comic() {
 
 useEffect(() => {
   dispatch(getComic(id))
-  console.log(comicStore)
 },[])
 const {id} = useParams()
   return (
@@ -30,10 +29,7 @@ const {id} = useParams()
         {comicStore.comics.response?.title}
 
       <img className='comicImage' src={comicStore.comics.response?.photo} alt="" />
-
-      <Chapters/>
-
-{/*       <button onClick={handleChapters}>Chapter</button>
+      <button onClick={handleChapters}>Chapter</button>
       {
         chapter
         ?
@@ -41,7 +37,7 @@ const {id} = useParams()
         :
           null
       }
-      <p className='description'>{comics.description}</p> */}
+      <p className='description'>{comics.description}</p>
 
       </div>
     </div>
