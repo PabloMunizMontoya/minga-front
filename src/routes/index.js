@@ -7,7 +7,8 @@ import NewComic from "./NewComic/NewComic.jsx"
 import NewAuthor from "./NewAuthor/NewAuthor.jsx"
 import NewChapter from "./NewKhapter/NewChapter.jsx";
 import NewCompany from './newCompany/NewCompany.jsx'
-
+import Comic from "./Comics/Comic.jsx";
+import Chapters from "../components/Chapters/Chapters.jsx";
 
 export const indexRouter = createBrowserRouter([
     {
@@ -35,6 +36,9 @@ export const indexRouter = createBrowserRouter([
         },{
           path: "/comments",
           element: <Comments />
+        },{
+          path: "/comic/:id",
+          element: <Comic/>
         }
       ]
     },
