@@ -3,9 +3,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const getChapter = createAsyncThunk(
     "getChapter",
-    async (chapter) => {
+    async (comic) => {
         try{
-            const response= await axios.get(`http://localhost:8000/api/chapters?comic_id=${chapter}`)
+            const response = await axios.get(`http://localhost:8000/api/chapters?comic_id=${comic}`)
             console.log(response)
             return {
                 response: {chapters: response.data},

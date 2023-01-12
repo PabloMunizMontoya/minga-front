@@ -9,53 +9,50 @@ import './comic.css'
 const {getComic} = comicAction
 
 export default function Comic() {
-  const comicStore = useSelector(store => store.comics)
+  const comics = useSelector(store => store.comics)
   const dispatch = useDispatch()
 
 
-  const [comics, setComics] = useState([]) 
   const [chapter, setChapter] = useState(false)
   const handleChapters = () => {
-    setChapter(!chapter)
+    setChapter(true)
   }
-
+  const handleManga = () => {
+    setChapter(false)
+  }
 useEffect(() => {
-  dispatch(getComic(id))
+  console.log(comics)
+  if(comics.comics.length === 0){
+    dispatch(getComic(id))
+  }
 },[])
 const {id} = useParams()
   return (
     <div>
       <div className='content'>
-        {comicStore.comics.response?.title}
+      <img className='comicImage' src={comics.comics.response?.photo} alt="" />
+      <div className='titlecenter'>
+      <h2 className='title'>{comics.comics.response?.title}</h2>
+      </div>
+      <div className='emojis'>
+      <button className='emoji'>&#128077;</button>
+      <button className='emoji'>&#128078;</button>
+      <button className='emoji'>&#128558;</button>
+      <button className='emoji'>&#128525;</button>
+      </div>
+      <div className='buttons'>
+      <button onClick={handleManga} className='btn'>Manga</button>
+      <button onClick={handleChapters} className='btn' >Chapter</button>
+      </div>
 
-      <img className='comicImage' src={comicStore.comics.response?.photo} alt="" />
-      <button onClick={handleChapters}>Chapter</button>
       {
         chapter
         ?
         (<Chapters/>)
         :
-          null
+          <p className='description'>{comics.comics.response?.description}</p>
       }
-      <p className='description'>{comics.description}</p>
-
       </div>
     </div>
   )
 }
-
-
-/*   const obtenerComic = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/api/comics');
-      let datos = response.data.response
-      console.log(datos)
-      setComics(datos)
-    } catch(err) {
-      console.log(err);
-    }
-  }
-  useEffect(() => {
-    obtenerComic()
-  }, [])
-  console.log(comics) */
