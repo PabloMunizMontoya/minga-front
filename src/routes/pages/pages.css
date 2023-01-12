@@ -1,26 +1,121 @@
 .header {
-    background-color: #ebebeb;
+    background-color: #EBEBEB;
 }
 
-.titleContainer{
-    background-color: black;
-    margin-top: 68px;
-    color: #ebebeb;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+h2{
+    color: #ffffff;
+   
+    margin-top: 96px;
+
+}
+.titulo{
+    z-index: 10;
+    color: #4338ca;
+}
+
+.titleContainer {
+    background-color:#4338CA;
+    height: 25vh;
+    margin-bottom: 20px;
+    color: #d74141;
     display: flex;
     justify-content: center;
     padding: 1em;
 }
 
-.comiPage{
+.comicPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
-.commentContainer{
+.imageContainer img {
+    /* object-fit: cover; */
+    max-height: 1500px;
+}
+
+.commentContainer {
     background-color: grey;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 1em;
+    z-index: 100;
+    gap: 10px;
+}
+
+.leftButton {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: transparent;
+}
+
+.rightButton {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background-color: blue;
+    background-color: transparent;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 15vh;
+    align-items: center;
+    background-color:#EBEBEB
+}
+.imgnav{
+height: 100px;
+width: 100px;
+object-fit: contain;
+}
+
+.menuBut{
+    z-index: 11;
+    margin-top: 1%;
+    background-color: #4338ca;
+    height: 30%;
+    width: 13%;
+    border: 0;
+    border-radius: 8px 8px 8px;
+    font-size: 18px;
+}
+
+.login-button{
+    margin-top: 1%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.anchorContain{
+    display: flex;
+    gap: 60px
+}
+
+.anchor {
+    color: black;
+    font-size: 22px;
+}
+
+.puntos{
+    height: 50px;
+    width: 50px;
+}
+.pcomments{
+    font-size: 20px;
 }
