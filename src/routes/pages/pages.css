@@ -11,22 +11,22 @@
 h2{
     color: #ffffff;
    
-    margin-top: 96px;
+   /*  margin-top: 96px; */
 
 }
 .titulo{
     z-index: 10;
-    color: #4338ca;
+    color: #ffffff;
 }
 
 .titleContainer {
     background-color:#4338CA;
-    height: 25vh;
+    height: 15vh;
     margin-bottom: 20px;
     color: #d74141;
     display: flex;
     justify-content: center;
-    padding: 1em;
+    align-items: center;
 }
 
 .comicPage {
@@ -54,7 +54,7 @@ h2{
 
 .leftButton {
     position: absolute;
-    top: 68px;
+
     left: 0;
     height: 100%;
     width: 50%;
@@ -63,15 +63,14 @@ h2{
 
 .rightButton {
     position: absolute;
-    top: 68px;
+
     right: 0;
     height: 100%;
     width: 50%;
-    background-color: blue;
     background-color: transparent;
 }
 
-nav{
+.Nav{
     display: flex;
     justify-content: space-around;
     height: 15vh;
@@ -118,4 +117,9 @@ object-fit: contain;
 }
 .pcomments{
     font-size: 20px;
+}
+
+.imagePage{
+    height: 600px;
+    object-fit: contain;
 }

@@ -5,7 +5,6 @@ import chapterActions from "../../store/chapter/actions";
 import './pages.css'
 import Nav2 from './Nav2'
 
-
 //http://localhost:3000/pages/63bf08f7579da57eb3ad5fb4#
 //use params
 const { getChapterDetails } = chapterActions
@@ -14,9 +13,12 @@ const { getChapterDetails } = chapterActions
 function Pages() {
   const [ current, setCurrent ] = useState(0)
 
-  const chapterStore = useSelector(state =>  state?.pages ) 
-  const dispatch = useDispatch()
+/*   const [ orderCurrent, setOrdenCurrent ] = useState() */
 
+  const chapterStore = useSelector(state =>  state?.pages ) 
+
+  console.log(chapterStore)
+  const dispatch = useDispatch()
  /*  const { id } = useParams() */
 
   useEffect(() => {
@@ -25,19 +27,19 @@ function Pages() {
     console.log(url[url.length - 1]);
     dispatch(getChapterDetails(id))
   }, [])
-  console.log(chapterStore);
+
  const getPagesImages = () => {
-    if (chapterStore.chapters?.length === 0) {
+    if (chapterStore.chapters?.pages?.length === 0) {
       return <p>Loading...</p>
     } else {
       return (
-        <div className="imageContainer"><img src={chapterStore?.chapters?.[current]} alt="Comic Page" /></div>
+        <div className="imageContainer"><img className="imagePage" src={chapterStore?.chapters?.pages?.[current]} alt="Comic Page" /></div>
       )
     }
-  } 
+  }
 
   const next = () => {
-    if (current !== chapterStore.chapters?.length - 1) {
+    if (current !== chapterStore.chapters?.pages?.length - 1) {
       setCurrent(current + 1)
     }
   } 
@@ -47,15 +49,15 @@ function Pages() {
     }
   }
 
-
-   const getChapterTitle = () => {
+  const getChapterTitle = () => {
     if (chapterStore?.chapters.length === 0) {
-      console.log(chapterStore)
       return <p>Loading...</p>
     } else {
-      return <h2 className="titulo">{chapterStore.chapters?.response?.title}</h2>
+      return <h2 className="titulo"> Cap n°: {chapterStore.chapters.order} - {chapterStore.chapters?.title}</h2>
     }
   } 
+
+
   /* function OneChapterCarousel() {
     const [images, setImages] = useState([]);
   
@@ -92,7 +94,7 @@ function Pages() {
   } */
   return (
     <>
-        <nav>
+        <div className="Nav">
         <img className="imgnav" src="/assets/logo1.png" alt="" />
         <div className="anchorContain">          
           <a className="anchor" href="#">Home</a>
@@ -100,9 +102,8 @@ function Pages() {
           <a className="anchor" href="#">Logout</a>         
         </div>
         <a className="login-button" href="#">Sing in</a>
-      </nav> */
+      </div> 
       <div className="container">
-
           <div className="titleContainer">
             {getChapterTitle()}
           </div>
