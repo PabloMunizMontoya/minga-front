@@ -38,6 +38,7 @@ const chapterReducer = createReducer(initialState, (builder) =>  {
             chapters: action.payload.response.chapter,
             message: action.payload.message
         }
+        return newState
     })
 
     //----------------
