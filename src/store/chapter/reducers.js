@@ -33,10 +33,16 @@ const chapterReducer = createReducer(initialState, (builder) =>  {
         }
         return newState
     })
+<<<<<<<<< Temporary merge branch 1
+    /* .addCase(getChapterTitle.fulfilled,(state, action) => {
+        let newState = {
+            title: action.payload.response.data.response.title,
+=========
 
     .addCase(getChapterbyorderandcomic.fulfilled, (state, action)=>{
         let newState={
             chapters: action.payload.response.chapter,
+>>>>>>>>> Temporary merge branch 2
             message: action.payload.message
         }
         return newState
@@ -53,6 +59,7 @@ const chapterReducer = createReducer(initialState, (builder) =>  {
         )
     
   
+>>>>>>>>> Temporary merge branch 2
 })
 
 export default chapterReducer
