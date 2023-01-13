@@ -12,8 +12,10 @@ const { getChapterDetails, getChapterbyorderandcomic } = chapterActions
 
 
 function Pages() {
-
-  const [ current, setCurrent ] = useState(0)
+  const [nextChap, setNetxChap] = useState('')
+  const [prevChap, setPrevChap] = useState('')
+  const [current, setCurrent ] = useState(0)
+  
   const chapterStore = useSelector(state =>  state?.pages )
   const dispatch = useDispatch()
   const navigation = useNavigate()
@@ -25,8 +27,7 @@ console.log(chapterStore)
   }, [id])
 
 
-
- const getPagesImages = () => {
+const getPagesImages = () => {
     if (chapterStore.chapters?.pages?.length === 0) {
       return <p>Loading...</p>
     } else {
@@ -40,13 +41,15 @@ const next = () => {
   console.log(chapterStore)
   if(current >= chapterStore.chapters?.pages?.length - 1  ){
     console.log("end chapter");
-    setCurrent(0)
+    setPrevChap(current)
+
     navigation("/pages/63bf08f7579da57eb3ad5fb5")
+    setCurrent(0)
     }
     if (current !== chapterStore.chapters.pages?.length - 1){
       setCurrent(current + 1)
-    }
-    }
+  }
+}
     
   const prev = () => {
     if (current >= 0) {
@@ -54,9 +57,8 @@ const next = () => {
     }
     if (current < 0){
       navigation("/pages/63bf08f7579da57eb3ad5fb4#")
-      setCurrent(chapterStore.chapters?.length - 1)
+      setCurrent(prevChap)
     }
-
   }
 
   const getChapterTitle = () => {
