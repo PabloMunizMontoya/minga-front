@@ -8,7 +8,6 @@ const getComic = createAsyncThunk(
     async (comic) => {
         try{
             let response = await axios.get(`http://localhost:8000/api/comics/${comic}`)
-            console.log(response.data.response)
             return{
                 response: {comic: response.data},
                 message: "comic obtained"
