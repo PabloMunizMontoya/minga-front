@@ -6,9 +6,11 @@ import Navbar from "./NavBar";
 import './navbar.css'
 import './pages.css'
 
+
 //http://localhost:3000/pages/63bf08f7579da57eb3ad5fb4#
 //use params
 const { getChapterDetails, getChapterbyorderandcomic } = chapterActions
+
 
 
 function Pages() {
@@ -65,11 +67,13 @@ const next = () => {
     } else {
       return <h2 className="titulo"> Cap n°: {chapterStore.chapters.order} - {chapterStore.chapters?.title}</h2>
     }
+
   } 
 
   return (
     <>
       <Navbar/>
+
 
       <div className="container">
           <div className="titleContainer">
