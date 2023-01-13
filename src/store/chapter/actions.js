@@ -1,7 +1,6 @@
 import axios from "axios"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
-
 const newChapter = createAsyncThunk("newChapter", async (chapter) => {
     try {
         const response = await axios.post(
@@ -25,11 +24,13 @@ const getChapterDetails = createAsyncThunk("getChapter", async (_id) => {
         const response = await axios.get(
             `http://localhost:8000/api/chapters/${_id}`
         )
-        console.log(response);
+        console.log(response.data.response);
         return {
-            response: {chapter: response.data.response.pages},
+            response: {chapter: response.data.response},
             message: "Chapter successfully obtained!"
+            
         }
+        
     } catch (error) {
         return {
             response: {chapter: error.response.data},
