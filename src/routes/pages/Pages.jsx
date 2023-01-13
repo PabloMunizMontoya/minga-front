@@ -1,32 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import chapterActions from "../../store/chapter/actions";
-
+import { useParams, useNavigate } from "react-router-dom";
+import Navbar from "./NavBar";
+import './navbar.css'
 import './pages.css'
-import Nav2 from './Nav2'
 
 //http://localhost:3000/pages/63bf08f7579da57eb3ad5fb4#
 //use params
-const { getChapterDetails } = chapterActions
+const { getChapterDetails, getChapterbyorderandcomic } = chapterActions
 
 
 function Pages() {
+
   const [ current, setCurrent ] = useState(0)
-
-/*   const [ orderCurrent, setOrdenCurrent ] = useState() */
-
-  const chapterStore = useSelector(state =>  state?.pages ) 
-
-  console.log(chapterStore)
+  const chapterStore = useSelector(state =>  state?.pages )
   const dispatch = useDispatch()
- /*  const { id } = useParams() */
-
+  const navigation = useNavigate()
+const { id } = useParams() 
+console.log(chapterStore)
   useEffect(() => {
-    const url = window.location.href.split("/")
-    const id = url[url.length - 1]
-    console.log(url[url.length - 1]);
+
     dispatch(getChapterDetails(id))
-  }, [])
+  }, [id])
+
+
 
  const getPagesImages = () => {
     if (chapterStore.chapters?.pages?.length === 0) {
@@ -38,15 +36,27 @@ function Pages() {
     }
   }
 
-  const next = () => {
-    if (current !== chapterStore.chapters?.pages?.length - 1) {
+const next = () => {
+  console.log(chapterStore)
+  if(current >= chapterStore.chapters?.pages?.length - 1  ){
+    console.log("end chapter");
+    setCurrent(0)
+    navigation("/pages/63bf08f7579da57eb3ad5fb5")
+    }
+    if (current !== chapterStore.chapters.pages?.length - 1){
       setCurrent(current + 1)
     }
-  } 
+    }
+    
   const prev = () => {
-    if (current > 0) {
+    if (current >= 0) {
       setCurrent(current -1)
     }
+    if (current < 0){
+      navigation("/pages/63bf08f7579da57eb3ad5fb4#")
+      setCurrent(chapterStore.chapters?.length - 1)
+    }
+
   }
 
   const getChapterTitle = () => {
@@ -57,52 +67,10 @@ function Pages() {
     }
   } 
 
-
-  /* function OneChapterCarousel() {
-    const [images, setImages] = useState([]);
-  
-    useEffect(() => { 
-      axios.get('http://localhost:8000/api/chapters/63bf08f7579da57eb3ad5fb4')
-          .then(response => {
-          setImages(response);
-          console.log(response);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }, []);
-  console.log(images);
-
-    const settings = {
-      dots: true,
-      infinite: false,
-  
-    };
-    if (!images.data) {
-      return <p>Loading...</p>
-    } else {
-
-      return (
-      <Slider {...settings}>
-      {images.data.response.pages.map( page => (
-        <img src={page} alt="Comic Page"/>
-      ))}
-      </Slider>
-      )
-      
-    }
-  } */
   return (
     <>
-        <div className="Nav">
-        <img className="imgnav" src="/assets/logo1.png" alt="" />
-        <div className="anchorContain">          
-          <a className="anchor" href="#">Home</a>
-          <a className="anchor" href="#">My comics</a>
-          <a className="anchor" href="#">Logout</a>         
-        </div>
-        <a className="login-button" href="#">Sing in</a>
-      </div> 
+      <Navbar/>
+
       <div className="container">
           <div className="titleContainer">
             {getChapterTitle()}
