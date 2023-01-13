@@ -11,6 +11,7 @@ import './pages.css'
 const { getChapterDetails, getChapterbyorderandcomic } = chapterActions
 
 
+
 function Pages() {
   const [nextChap, setNetxChap] = useState('')
   const [prevChap, setPrevChap] = useState('')
