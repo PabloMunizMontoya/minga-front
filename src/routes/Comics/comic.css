@@ -9,8 +9,14 @@
     flex-direction: column;
     align-items: center;
 }
+.descriptioncontent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem 0 1rem 0;
+}
 .comicImage{
-    height: 30vh;
+    height: 40vh;
     border-radius: 20px;
     width: 40vw;
     background-color: white;
@@ -20,14 +26,18 @@
     color: black;
     width: 50%;
     margin: 20px 0 20px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .title{
-    margin: 15px 0 15px 0;
+    margin: 3rem 0 15px 0;
     color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .titlecenter{
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 30vh;
 }
 .emojis{
     display: flex;
@@ -48,7 +58,7 @@
 .emoji:hover{
     background-color: rgb(190, 190, 190);
 }
-.btn{
+.btn-blue{
     cursor: pointer;
     border: none;
     background-color: #4338ca;
@@ -58,15 +68,27 @@
     margin: 0 10px 0 10px;
     transition: 0.6s ease;
 }
-.btn:hover{
-    background-color: #2d2488;
+.btn-white{
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px;
+    width: 10vw;
+    height: 5vh;
+    margin: 0 10px 0 10px;
+    transition: 0.6s ease;
 }
+
 .buttons{
     display: flex;
 }
 
 @media (min-width: 320px) and (max-width: 767px){
-    .btn{
+    .btn-blue{
+        width: 20vw;
+    }
+    .btn-white{
         width: 20vw;
     }
     .comicImage{
@@ -83,6 +105,9 @@
         background-color: rgb(190, 190, 190);
     }
 
+    .title{
+        font-size: 3rem;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

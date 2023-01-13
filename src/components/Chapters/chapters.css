@@ -1,4 +1,5 @@
-.title{
+.titlechapter{
+
     width: 100%;
     text-align: center;
     color: black;
@@ -17,6 +18,7 @@
 }
 .content{
     display: flex;
+    scroll-behavior: smooth;
 }
 .imagecard{
     height: 12vh;
@@ -55,15 +57,34 @@
 .nextbtn:hover{
     background-color: #868686;
 }
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.sorrycontent{
+    display: flex;
+    align-items: center;
+    height: 25vh;
+}
+.sorry{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 @media (min-width: 320px) and (max-width: 768px){
     .chaptercontent{
         width: 80vw;
     }
-    .title{
+    .titlechapter{
         font-size: 0.75rem;
     }
     .anchor{
         width: 15vw;
+    }
+    .nextbtn{
+        width: 20vw;
+    }
+    .imagecard{
+        width: 20%;
     }
 }
 @media (min-width: 1440px) and (max-width: 2560px){

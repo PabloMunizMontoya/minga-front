@@ -1,51 +1,83 @@
-import React from 'react'
-import { useEffect } from 'react'
-import './chapters.css'
-import chapterAction from '../../store/chapter/actions'
-import { useParams } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { Link as Anchor } from 'react-router-dom'
-import comicAction from '../../store/comic/actions'
+import React from "react";
+import { useState, useEffect } from "react";
+import "./chapters.css";
+import chapterAction from "../../store/chapter/actions";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Link as Anchor } from "react-router-dom";
+import comicAction from "../../store/comic/actions";
 /* import { useSearchParams } from 'react-router-dom' */
 
-const {getComic} = comicAction
-const {getChapter} = chapterAction
+const { getComic } = comicAction;
+const { getChapter } = chapterAction;
 export default function Chapters() {
-/*     const [page, setPage] = useSearchParams() */
-    const chapters = useSelector(store => store.chapters)
-    const comics = useSelector(store => store.comics)
-    const dispatch = useDispatch()    
-    const {id} = useParams()
-    
-      console.log(id)
+  const chapters = useSelector((store) => store.chapters.chapters);
+  const comics = useSelector((store) => store.comics);
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
-/*     const pages = () => {
-      setPage({
-        pages: 2
-      })
-    } */
+  const [pages, setPages] = useState(1);
+  let capitulos = chapters.response;
+  console.log(capitulos);
 
-    useEffect(() => {
-      if(chapters.chapters.length === 0){
-        dispatch(getChapter(id))  
-        dispatch(getComic(id))
-        console.log(chapters)
-      }
+  console.log(pages);
 
-            //CONSULTA CHAPTERS CON DIFERENTE ID
-
-    }, [])
+  const next = () => {
+    setPages(pages + 1);
+  };
+  const prev = () => {
+    setPages(pages - 1);
+  };
+  useEffect(() => {
+    if (chapters.length === 0) {
+      dispatch(getChapter({ id, pages }));
+      dispatch(getComic(id));
+      console.log(chapters);
+    } else {
+      dispatch(getChapter({ id, pages }));
+    }
+  }, [pages]);
   return (
-    <div className='content'>
-        {chapters.chapters.response?.map(chapter =>
-        <div className='chaptercontent' key={chapter.order} >
-          <img className='imagecard' src={comics.comics.response?.photo} alt="" />
-            <p className='title'>{chapter.title}</p>
-          <div className='anchorcontainer'>
-          <Anchor to={'/pages'} className='anchor' >View More</Anchor>
+    <div className="content">
+      {chapters.response?.length === 0 ? (
+        <div className="sorrycontent">
+          <h2 className="sorry">Sorry, this manga has no chapters</h2>
+        </div>
+      ) : (
+        <div>
+          {chapters.response?.map((chapter) => (
+            <div className="chaptercontent" key={chapter.order}>
+              <img
+                className="imagecard"
+                src={comics.comics.response?.photo}
+                alt=""
+              />
+              <p className="titlechapter">{chapter.title}</p>
+              <div className="anchorcontainer">
+                <Anchor to={"/pages"} className="anchor">
+                  Read
+                </Anchor>
+              </div>
+            </div>
+          ))}
+          <div className="pagination">
+            <div>
+              {pages === 1 ? null : (
+                <button className="nextbtn" onClick={prev}>
+                  Prev
+                </button>
+              )}
+            </div>
+            <div>
+              {capitulos?.length < 5 ? null : (
+                <button className="nextbtn" onClick={next}>
+                  Next
+                </button>
+              )}
+            </div>
           </div>
-        </div>)}
-        <button className='nextbtn' /* onClick={pages} */ >Next</button>
+        </div>
+      )}
     </div>
-  )
+  );
 }
