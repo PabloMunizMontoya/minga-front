@@ -3,7 +3,7 @@ import { createReducer } from "@reduxjs/toolkit";
 
 const { newChapter, getChapterDetails, getChapters, getChapterbyorderandcomic } = chapterActions;
 
-const initialState = { chapters: [], message: "" };
+const initialState = { chapters: [], message: "", chapter: [] };
 
 const chapterReducer = createReducer(initialState, (builder) =>  {
     builder
@@ -22,7 +22,8 @@ const chapterReducer = createReducer(initialState, (builder) =>  {
     })
     .addCase(getChapterDetails.fulfilled, (state, action) => {
         let newState = {
-            chapters: action.payload.response.chapter,
+            chapter: action.payload.response.chapter,
+            chapters : state.chapters,
             message: action.payload.message
         }
         return newState
