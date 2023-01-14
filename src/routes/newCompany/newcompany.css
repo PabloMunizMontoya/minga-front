@@ -1,0 +1,51 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.form-item{
+    border: none;
+    border-bottom: 3px solid grey;
+    width: 600px;
+    height: 70px;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+}
+
+.button{
+    border: none;
+    background-color: rgb(116, 116, 116);
+    width: 10vw;
+    height: 5vh;
+    border-radius: 50px;
+    margin-top: 15px;
+
+    
+}
+
+h2{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 800px){
+    .form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+    h2{
+        text-align: center;
+    }
+
+}

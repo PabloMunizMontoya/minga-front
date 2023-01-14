@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.conteiner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.shonen{
+    border-radius: 20%;
+    color: black;
+    border: none;
+    width: 70px;
+    height: 30px;
+}
+
+.seinen{
+    border-radius: 20%;
+    color: black;
+    border: none;
+    width: 70px;
+    height: 30px;
+}
+
+.shojo{
+    border: none;
+    border-radius: 20%;
+    color: black;
+    width: 70px;
+    height: 30px;
+}
+
+.kodomo{
+    border: none;
+    border-radius: 20%;
+    color: black;
+    width: 70px;
+    height: 30px;
+}
+
+.conteiner-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.left-conteiner{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+   
+}
+
+.border-conteiner-1{
+    border-left: 8px solid rgb(146, 56, 230)
+}
+
+.left-conteiner, h3{
+    color: rgb(146, 56, 230);
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.buttons-edit{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(194, 166, 221);
+    color: rgb(146, 56, 230);
+    border: none;
+    border-radius: 20%;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 8px;
+
+
+}
+
+.buttons-delete{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(249, 202, 190);
+    color: rgb(219, 76, 40);
+    border: none;
+    border-radius: 20%;
+}
+
+.img-card{
+    display: flex;
+    justify-content: end;
+    width: 200px;
+    height: 200px;
+    border-radius: 30%;
+    border: none;
+    margin-left: 40px;
+
+    
+}
+
+.border-conteiner-2{
+    border-left: 8px solid rgb(237, 118, 75);
+}
+
+.border-conteiner-3{
+    border-left: 8px solid rgb(56, 230, 126);
+}
+
+.title-card-2{
+    color: rgb(237, 118, 75) ;
+}
+
+.title-card-3{
+    color: rgb(56, 230, 126) ;
+}
+
+.slideshow-conteiner{
+    display: block;
+}
+
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
