@@ -13,6 +13,7 @@ const { getChapterDetails, getChapters } = chapterActions;
 
 function Pages() {
   const [current, setCurrent] = useState(JSON.parse(localStorage.getItem('page')));
+
   const chapterStore = useSelector((state) => state?.pages);
 
   const dispatch = useDispatch();
@@ -71,6 +72,7 @@ const traerPageActual = () =>{
       setCurrent(current + 1);
       console.log(current)
     }
+
   };
   
   const prev = () => {
