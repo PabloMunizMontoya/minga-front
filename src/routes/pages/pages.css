@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .header {
     background-color: #EBEBEB;
 }
@@ -21,7 +26,7 @@ h2{
 
 .titleContainer {
     background-color:#4338CA;
-    height: 15vh;
+    height: 10vh;
     margin-bottom: 20px;
     color: #d74141;
     display: flex;
@@ -35,11 +40,6 @@ h2{
     justify-content: center;
     align-items: center;
 
-}
-
-.imageContainer img {
-    /* object-fit: cover; */
-    max-height: 1500px;
 }
 
 .commentContainer {
@@ -126,7 +126,12 @@ object-fit: contain;
 
 @media (max-width: 680px) {
     .imagePage{
-        /* height: 600px;
-        object-fit: contain; */
+        object-fit: fill;
+        height: 500px; 
     }
+   .commentContainer{
+    height: 10vh;
+   }
+
+
 }

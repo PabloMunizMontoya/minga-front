@@ -8,10 +8,12 @@ import "./pages.css";
 
 //http://localhost:3000/pages/63bf08f7579da57eb3ad5fb4#
 //use params
+
 const { getChapterDetails, getChapters } = chapterActions;
 
 function Pages() {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(JSON.parse(localStorage.getItem('page')));
+
   const chapterStore = useSelector((state) => state?.pages);
 
   const dispatch = useDispatch();
@@ -29,16 +31,30 @@ function Pages() {
       return <p>Loading...</p>;
     } else {
       return (
-        <div className="imageContainer">
+
           <img
             className="imagePage"
             src={chapterStore?.chapter?.pages?.[current]}
-            alt="Comic Page"
-          />
-        </div>
+            alt="Comic Page"/>
       );
     }
   };
+
+ const pageActual = () => {
+  const currenActual = current
+  let page =  localStorage.setItem("page", JSON.stringify(currenActual));
+  return page
+ } 
+ pageActual();
+
+const traerPageActual = () =>{
+    let lastPageRead =  JSON.parse(localStorage.getItem("page"));
+    
+    return lastPageRead
+ 
+ }
+ traerPageActual()
+
 
   const next = () => {
     console.log(chapterStore);
@@ -54,12 +70,15 @@ function Pages() {
     }
     if (current !== chapterStore.chapter.pages?.length - 1) {
       setCurrent(current + 1);
+      console.log(current)
     }
+
   };
   
   const prev = () => {
     if (current > 0) {
       setCurrent(current - 1);
+      console.log(current)
     }
     else if (chapterStore.chapter.order === 1) {
       navigation(`/comic/${chapterStore.chapter.comic_id}`);
@@ -70,7 +89,6 @@ function Pages() {
       );
       navigation(`/pages/${prevchaptes._id}`);
       setCurrent(prevchaptes.pages.length - 1);
-      console.log("");
   }
   }
 
@@ -80,7 +98,6 @@ function Pages() {
     } else {
       return (
         <h2 className="titulo">
-          {" "}
           Cap n°: {chapterStore.chapter.order} - {chapterStore.chapter?.title}
         </h2>
       );
