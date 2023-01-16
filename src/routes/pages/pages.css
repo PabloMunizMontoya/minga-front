@@ -123,3 +123,10 @@ object-fit: contain;
     height: 600px;
     object-fit: contain;
 }
+
+@media (max-width: 680px) {
+    .imagePage{
+        /* height: 600px;
+        object-fit: contain; */
+    }
+}
