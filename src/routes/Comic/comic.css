@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.descriptioncontent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem 0 1rem 0;
+}
+.comicImage{
+    height: 40vh;
+    border-radius: 20px;
+    width: 40vw;
+    background-color: white;
+}
+.description{
+    text-align: center;
+    color: black;
+    width: 50%;
+    margin: 20px 0 20px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.title{
+    margin: 3rem 0 15px 0;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.titlecenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+.emojis{
+    display: flex;
+    margin: 2rem;
+}
+.emoji{
+    border: none;
+    background-color: white;
+    height: 11vh;
+    margin: 1rem;
+    width: 6vw;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.emoji:hover{
+    background-color: rgb(190, 190, 190);
+}
+.btn-blue{
+    cursor: pointer;
+    border: none;
+    background-color: #4338ca;
+    border-radius: 20px;
+    width: 10vw;
+    height: 5vh;
+    margin: 0 10px 0 10px;
+    transition: 0.6s ease;
+}
+.btn-white{
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px;
+    width: 10vw;
+    height: 5vh;
+    margin: 0 10px 0 10px;
+    transition: 0.6s ease;
+}
+
+.buttons{
+    display: flex;
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+    .btn-blue{
+        width: 20vw;
+    }
+    .btn-white{
+        width: 20vw;
+    }
+    .comicImage{
+        width: 60vw;
+    }
+    .emoji{
+        font-size: 2rem;
+        width: 15vw;
+        height: 8vh;
+        text-align: center;
+        margin: 1rem 0.5rem 1rem 0.5rem;
+    }
+    .emoji:hover{
+        background-color: rgb(190, 190, 190);
+    }
+
+    .title{
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .emoji{
+        width: 9vw;
+    }
+} 
+@media (min-width: 1440px) and (max-width: 2560px){
+    .emoji{
+        font-size: 4rem;
+        width: 10vw;
+        height: 14vh;
+    }
+    .btn{
+        height: 7vh;
+        width: 12vw;
+        font-size: 2rem;
+    }
+}
