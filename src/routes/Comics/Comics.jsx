@@ -3,6 +3,7 @@ import Navcomics from "../../components/navcomics/Navcomics"
 import Maincomics from "./maincomics/Maincomics"
 import "./comics.css"
 
+
 function Comics() {
     return (
         <>
@@ -10,8 +11,10 @@ function Comics() {
             <Navcomics/>
         </div>    
             <Maincomics />
-        
+           
         </>
+        
+
     )
 }
 

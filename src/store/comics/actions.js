@@ -3,17 +3,19 @@ import axios from "axios";
 
 const getComics = createAsyncThunk(
     "getComics",
-    async ({inputText, inputSort, inputCategory}) =>{
+    async ({inputText, inputCategory, pages}) =>{
         try{
-            let comics = await axios.get(`http://localhost:8000/api/comics?title=${inputText}&category_id=${inputCategory}&sort=${inputSort}`)
-
+            let comics = await axios.get(`http://localhost:8000/api/comics?title=${inputText}&category=${inputCategory}&page=${pages}`)
+            console.log(inputCategory)
             return {
                 success: true ,
-                response: {comics:comics.data.response}
-
+                response: {
+                    comics:comics.data.response,
+                    text: inputText
+                    
+                }
             }
-
-        }catch(error){
+        } catch (error) {   
             return {
                 success:false,
                 response:{error:error.message}
@@ -22,6 +24,6 @@ const getComics = createAsyncThunk(
     }
 )
 
-const comicsActions = {getComics}
+const comicsActions = { getComics }
 
 export default comicsActions

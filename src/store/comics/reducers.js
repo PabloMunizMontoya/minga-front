@@ -3,7 +3,7 @@ import comicsActions from "./actions.js"
 
 const {getComics}= comicsActions
 
-const initialState = {comics : []}
+const initialState = {comics : [], inputText: "", category:[]}
 
 const comicsReducers = createReducer(
     initialState,
@@ -12,13 +12,13 @@ const comicsReducers = createReducer(
             getComics.fulfilled,
             (state,action) =>{
                 let newState = {
-                    comics: action.playload.response
+                    comics: action.payload.response.comics,
+                    text: action.payload.response.text,
+                    category: action.payload.response.category,
                 }
                 return newState
             }
         )
-    
-    
     }
 )
 

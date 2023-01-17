@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import alertReducer from './alert/reducers.js'
 import comicsReducers from "./comics/reducers.js";
+import filterCategoryReducer from "./comicCategories/reducers.js";
 
-const store = configureStore({
+export const store = configureStore({
     reducer: {
-        alert: alertReducer,
-        comics: comicsReducers
-    
+        alertReducer,
+        comics: comicsReducers,
+        filterCategoryComic: filterCategoryReducer
     }
 })
 

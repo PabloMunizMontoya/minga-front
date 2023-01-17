@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
+import CategoryButton from '../../components/comics/CategoryButton'
 import "./comicscategories.css"
 
 
@@ -27,9 +28,16 @@ import "./comicscategories.css"
 
   return (
     <div className="all-buttons">
-        {
-        categories.map((category, index) =>{return <button key={index} className={"button"+ (index +1)}>{category.name}</button>})
-        }
+        {categories.map((category, index) =>{
+            return (
+            <CategoryButton 
+            index={index} 
+            key={index} 
+            id={category._id} 
+            name={category.name}
+            />
+        )
+    })}
     </div>
   )
 }
