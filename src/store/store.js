@@ -6,7 +6,7 @@ import chapterReducer from "./chapter/reducers.js";
 const store = configureStore({
     reducer: {
         alertReducer,
-        comics:comicReducer,
+        comic:comicReducer,
         chapters: chapterReducer
     }
 })

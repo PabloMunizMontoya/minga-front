@@ -12,7 +12,7 @@ const { getComic } = comicAction;
 const { getChapter } = chapterAction;
 export default function Chapters() {
   const chapters = useSelector((store) => store.chapters.chapters);
-  const comics = useSelector((store) => store.comics);
+  const comic = useSelector((store) => store.comic);
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -49,12 +49,12 @@ export default function Chapters() {
             <div className="chaptercontent" key={chapter.order}>
               <img
                 className="imagecard"
-                src={comics.comics.response?.photo}
+                src={comic.comics.response?.photo}
                 alt=""
               />
               <p className="titlechapter">{chapter.title}</p>
               <div className="anchorcontainer">
-                <Anchor to={"/pages"} className="anchor">
+                <Anchor to={"/pages/:id"} className="anchor">
                   Read
                 </Anchor>
               </div>
