@@ -9,7 +9,7 @@ import './comic.css'
 const {getComic} = comicAction
 
 export default function Comic() {
-  const comics = useSelector(store => store.comics)
+  const comic = useSelector(store => store.comic)
   const dispatch = useDispatch()
   
   const [chapter, setChapter] = useState(false)
@@ -20,8 +20,8 @@ export default function Comic() {
     setChapter(false)
   }
 useEffect(() => {
-  console.log(comics)
-  if(comics.comics.length === 0){
+  console.log(comic)
+  if(comic.comics.length === 0){
     dispatch(getComic(id))
   }
 },[])
@@ -29,9 +29,9 @@ const {id} = useParams()
   return (
     <div>
       <div className='content'>
-      <img className='comicImage' src={comics.comics.response?.photo} alt="" />
+      <img className='comicImage' src={comic.comics.response?.photo} alt="" />
       <div className='titlecenter'>
-      <h2 className='title'>{comics.comics.response?.title}</h2>
+      <h2 className='title'>{comic.comics.response?.title}</h2>
       </div>
 {/*       <div className='emojis'>
       <button className='emoji'>&#128077;</button>
@@ -57,7 +57,7 @@ const {id} = useParams()
         :
         <div className='descriptioncontent'>
           <h2 className='title'>Manga synopsis</h2>
-          <p className='description'>{comics.comics.response?.description}</p>
+          <p className='description'>{comic.comics.response?.description}</p>
         </div>
       }
       </div>
