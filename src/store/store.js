@@ -8,6 +8,7 @@ export const store = configureStore({
         alertReducer,
         comics: comicsReducers,
         filterCategoryComic: filterCategoryReducer
+        
     }
 })
 
