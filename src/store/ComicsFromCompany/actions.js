@@ -3,10 +3,11 @@ import axios from "axios";
 
 const obtenerComics = createAsyncThunk(
     "obtenerComics",
-    async({company, category}) => {
+    async({company, category, pages}) => {
         try{
-            let comics = await axios.get(`http://localhost:8000/api/comics/profile/company?company_id=${company}&category=${category}`)
-            console.log(comics)
+            //console.log(category);
+            let comics = await axios.get(`http://localhost:8000/api/comics/profile/company?company_id=${company}&category=${category.join(",")}&page=${pages}`)
+            //console.log(comics)
             return {
                 succes: true,
                 response: {comics: comics.data.response}

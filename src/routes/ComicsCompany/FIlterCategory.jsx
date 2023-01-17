@@ -1,42 +1,34 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import traerComicsdeCategoryActions from '../../store/ComicsFromCategories/actions'
 
-const FilterCategory = async()=>{
+const FilterCategory = ({cat})=>{
+    const dispatch = useDispatch()
+    const {traerComicsdeCategory} = traerComicsdeCategoryActions
+    const [click, setClick] = useState(true)
 
-     const [categories, setCategories] = useState([])
+//capt
+//definir la accion que va a despachar el id hacia el reductor para que el id de la categoria este disponible para el componente que hace la peticion (es una accion sincrona= createAction)
+//definido el estado de redux con el id de la categoria: con useSelector lo utilizo para la peticion en comics.from.company
 
-     const data = async ()=> {
-        try{
-            const response = await axios.get('htttp://localhost:8000/api/categories')
-           setCategories(response.data.response)
-        }catch(error){
-        console.log(error);
-   
-        }
-     }
-    
-    // useEffect(()=>{
-    //     FilterCategory()
-    // },[])
+     //console.log(categories)
     
      const traerId = (element) =>{
-         console.log(element)
+    // console.log(element.target.id)
+     setClick(!click)
+     let data = {
+        category: element.target.id,
+        click: click
+     }
+     dispatch(traerComicsdeCategory(data))
      }
 
-
     return(
-        <div className='conteiner-buttons'>
-            {
-                categories.map((category, index) => {
-                    return <button onClick={traerId} key={index} id={category._id}>{category.name}</button>
-                })
-            }
-
-        </div>
+        <button className='seinen' onClick={traerId} id={cat._id}>{cat.name}</button> 
     )
 
 }
 
 
-export default FilterCategory
+export default FilterCategory 

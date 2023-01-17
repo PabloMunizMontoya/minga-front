@@ -22,37 +22,16 @@
 
 }
 
-.shonen{
-    border-radius: 20%;
-    color: black;
-    border: none;
-    width: 70px;
-    height: 30px;
-}
 
 .seinen{
     border-radius: 20%;
-    color: black;
+    color: rgb(46, 69, 2);
     border: none;
     width: 70px;
     height: 30px;
+    background-color: rgb(189, 231, 104);
 }
 
-.shojo{
-    border: none;
-    border-radius: 20%;
-    color: black;
-    width: 70px;
-    height: 30px;
-}
-
-.kodomo{
-    border: none;
-    border-radius: 20%;
-    color: black;
-    width: 70px;
-    height: 30px;
-}
 
 .conteiner-1{
     display: flex;
@@ -136,5 +115,26 @@
 .wrap{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.buttonPagination{
+    border-radius: 20%;
+    color: rgb(46, 69, 2);
+    border: none;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(189, 231, 104);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px;
+}
+
+.conteinerButtonsPagination{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    width: 100%;
+    
 }

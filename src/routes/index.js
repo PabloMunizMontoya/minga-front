@@ -8,6 +8,7 @@ import NewAuthor from "./NewAuthor/NewAuthor.jsx"
 import NewChapter from "./NewKhapter/NewChapter.jsx";
 import NewCompany from './newCompany/NewCompany.jsx'
 import ComicsFromCompany from "./ComicsCompany/Comics.From.Company.jsx";
+import FilterCategory from "./ComicsCompany/FIlterCategory.jsx";
 
 
 export const indexRouter = createBrowserRouter([
@@ -36,14 +37,15 @@ export const indexRouter = createBrowserRouter([
         },{
           path: "/comments",
           element: <Comments />
+        },
+        {
+          path: "/company/:id",
+          element: <ComicsFromCompany/>
         }
-      ],
+      ]
       
     },
-    {
-      path: "/company/:id",
-      element: <ComicsFromCompany/>
-    }
+    
   
   ])
 
