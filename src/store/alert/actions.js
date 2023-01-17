@@ -10,3 +10,4 @@ const mingaAlert = createAction(
 const alertActions = {mingaAlert}
 
 export default alertActions
+
