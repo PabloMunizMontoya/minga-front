@@ -17,20 +17,15 @@ const ComicsCards = () => {
                 return (
                  <Anchor to= {`/comics/${card._id}`} key={index} className="card">
                     <div className="rectangle">
-
                     </div>    
-                
-                        <div className="textCard">
-                            <h2 className="tittleCard">{card.title}</h2>
-                            <p className="categoryText">{card.category.name}</p>
-                            
-                        </div>
+                            <div className="textCard">
+                                <h2 className="tittleCard">{card.title}</h2>
+                                <p className="categoryText">{card.category.name}</p>  
+                            </div>
 
-                        <div className="divCard">
-                            <img className="imagen-card" src={card.photo} alt=""  />
-                        </div>
-
-                    
+                            <div className="divCard">
+                                <img className="imagen-card" src={card.photo} alt=""  />
+                            </div>
                 </Anchor>
                 )
              })} 

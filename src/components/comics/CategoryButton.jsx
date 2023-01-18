@@ -6,37 +6,26 @@ const {filterCategoryComics} = filterCategoryComicsActions
 
 export default function CategoryButton(props) {
     const { id,index, name} = props
-    const [click, setClick] = useState(true)
-    const [color, setColor] = useState(false)
-    const dispatch = useDispatch()
-
     let category = useSelector((store) => store.comics.category)
     
+    if (category.length > 0){
+        category = category?.split(",")
+        category = category?.includes(id)
+        console.log(category)
+    } else {
+        category = false
+    }
     
-    
+    const [click, setClick] = useState(category)
+    const [color, setColor] = useState(category)
+    const dispatch = useDispatch()
 
-    //  useEffect (() => {
-        
-    //      if (category.length > 0) {
-    //           if (category.includes(id)){
-    //          setColor(!color)
-             
-    //          }
-    //       }
-    //  }, [category])
 
     const getId = (e) => { 
-        
         setClick(!click)
-        
-        setColor(!color)
-        /* dispatch (filterCategoryComics(id)) */
-        
+        setColor(!color) 
         dispatch(filterCategoryComics(id))
     }
-
-    
-
     return (
     <button 
     onClick={getId} 

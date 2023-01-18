@@ -4,6 +4,7 @@ import ComicsCategories from "../../../components/comics/ComicsCategories";
 import { useDispatch, useSelector } from "react-redux";
 import comicsActions from "../../../store/comics/actions";
 import ComicsCards from "../../../components/comics/ComicsCards";
+
 const { getComics } = comicsActions;
 
 const Maincomics = () => {
@@ -112,7 +113,7 @@ const Maincomics = () => {
                         )}
                     </div>
                     <div>
-                        {lengthOfComics?.length < 1 ? null : (
+                        {lengthOfComics?.length < 10 ? null : (
                             <button onClick={next} className="botonnextprev">
                                 next
                             </button>

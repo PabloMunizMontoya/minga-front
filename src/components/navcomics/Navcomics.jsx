@@ -29,6 +29,8 @@ export default function Nav() {
               <Anchor className='items'  to={"/new-comic"}>New Comic</Anchor>
               <Anchor className='items'  to={"/new-chapter"}>New Chapter</Anchor>              
               <Anchor className='items'  to={"/"}>Logout</Anchor>
+              <Anchor className='items'  to={"/comics"}>comics</Anchor>
+              
               </div>
           </nav>
           )

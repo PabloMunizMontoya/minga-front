@@ -11,7 +11,9 @@ const getComics = createAsyncThunk(
                 success: true ,
                 response: {
                     comics:comics.data.response,
-                    text: inputText
+                    text: inputText,
+                    category: inputCategory,
+                    page:pages
                     
                 }
             }

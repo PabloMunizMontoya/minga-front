@@ -15,6 +15,7 @@ const comicsReducers = createReducer(
                     comics: action.payload.response.comics,
                     text: action.payload.response.text,
                     category: action.payload.response.category,
+                    
                 }
                 return newState
             }
