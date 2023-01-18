@@ -38,8 +38,11 @@ const ComicsFromCompany = () => {
     useEffect(() => {
         dispatch(obtenerComics({company:id, category: category, pages}))
         // en lugar de pasar el harcodeado pasar variable category 
-    },[pages]) // adentro del corchete agregar el parametro que cada vez que cambie ejecuta el efecto(parametro : category)
+    },[category]) // adentro del corchete agregar el parametro que cada vez que cambie ejecuta el efecto(parametro : category)
 
+    useEffect(() =>{
+        dispatch(obtenerComics({company:id, category: category, pages}))
+    },[pages])
     const lengthOfComics = comics
     console.log( lengthOfComics)
     console.log(pages)
