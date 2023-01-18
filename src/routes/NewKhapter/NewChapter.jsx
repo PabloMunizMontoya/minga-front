@@ -29,7 +29,7 @@ export default function NewChapter() {
 /*         console.log(error.response.data.response) */
         //utilizo el hook useDispatch para despachar los errores hacia la accion
       })
-  }
+  } 
   return (
     <div className='chapters'>
         <h2 className='legend'>New Chapter</h2>

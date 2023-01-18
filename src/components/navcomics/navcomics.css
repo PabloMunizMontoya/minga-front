@@ -1,0 +1,106 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.imgLogo{
+    height: 40px;
+    padding-top: 0.5rem;
+    box-sizing: content-box;
+}
+
+nav {
+    height: 20vh;
+    position: absolute;
+    opacity: 1;
+    z-index: 10;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.menuButton{
+    z-index: 11;
+    margin-top: 1%;
+    background-color: #4338ca;
+    height: 30%;
+    width: 13%;
+    border: 0;
+    border-radius: 8px 8px 8px;
+    font-size: 18px;
+  }
+  .menuButton:hover{
+    background-color: #302794;
+  }
+.navItems {
+  margin-top: 20px;
+    display: flex;
+    width: 13%;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 1rem;
+    align-items: center;
+    border-radius: 15px;
+  }
+.activo{
+  margin: 20px;
+
+}
+.buton{
+    height: 50px;
+}
+.item{
+  width: 10%;
+}
+
+.login-button{
+    margin-top: 1%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+.activo{
+  padding-top: 7%;
+}
+.items{
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+.items:hover{
+  color: rgb(189, 189, 189);
+}
+
+@media (max-width:925px){
+  .activo{
+    padding: 0;
+    justify-content: center;
+    margin-top: 50px;}
+
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+  nav{
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .imgLogo{
+    padding-top: 5%;
+  }
+  .activo{
+    padding: 0;
+    justify-content: center;
+    margin-top: 20px
+
+  } 
+
+  .items:hover{
+    color: rgb(189, 189, 189);
+  }
+}
+
+@media (max-width: 500px){
+  .menuButton{
+    width: 20%;
+  }
+}

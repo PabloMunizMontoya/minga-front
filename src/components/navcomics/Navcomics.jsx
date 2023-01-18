@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link as Anchor } from "react-router-dom";
-import './nav.css'
+import './navcomics.css'
 /* import logo1 from './public/assets/logo1.png' */
 
 
@@ -29,7 +29,8 @@ export default function Nav() {
               <Anchor className='items'  to={"/new-comic"}>New Comic</Anchor>
               <Anchor className='items'  to={"/new-chapter"}>New Chapter</Anchor>              
               <Anchor className='items'  to={"/"}>Logout</Anchor>
-              <Anchor className='items'  to={"/comics"}>comcis</Anchor>
+              <Anchor className='items'  to={"/comics"}>comics</Anchor>
+              
               </div>
           </nav>
           )

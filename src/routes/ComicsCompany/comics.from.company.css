@@ -11,8 +11,10 @@
 
 .conteiner-buttons{
     width: 100%;
+    height: 2rem;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 8vh;
 }
 
 .conteiner{
@@ -24,20 +26,20 @@
 
 
 .seinen{
-    border-radius: 20%;
-    color: rgb(46, 69, 2);
+    padding: 5px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
     border: none;
-    width: 70px;
-    height: 30px;
-    background-color: rgb(189, 231, 104);
+    width: 12vw;
+    font-size: 1rem;
+    background-color:rgb(221, 190, 149);
 }
 
 
 .conteiner-1{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 50px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .left-conteiner{
@@ -47,8 +49,19 @@
    
 }
 
+.contains{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 90%;
+    margin: 1rem 0;
+}
+
 .border-conteiner-1{
-    border-left: 8px solid rgb(146, 56, 230)
+    height: 70%;
+    margin-top: 7vh;
+    border-left: 6px solid rgb(146, 56, 230)
 }
 
 .left-conteiner, h3{
@@ -85,9 +98,8 @@
     justify-content: end;
     width: 200px;
     height: 200px;
-    border-radius: 30%;
+    border-radius: 130px 20px 20px 130px;
     border: none;
-    margin-left: 40px;
 
     
 }
@@ -113,18 +125,25 @@
 }
 
 .wrap{
+    border-radius: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    margin-top: 50px;
+    background-color: rgb(185, 185, 185);
+}
+.h2card{
+    color: black;
 }
 
 .buttonPagination{
-    border-radius: 20%;
-    color: rgb(46, 69, 2);
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
     border: none;
     width: 70px;
     height: 30px;
-    background-color: rgb(189, 231, 104);
+    background-color: gray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,5 +155,20 @@
     align-items: flex-end;
     justify-content: end;
     width: 100%;
-    
+}
+
+@media (max-width: 575px){
+    .conteiner-buttons{
+        display: flex;
+        gap: 10px;
+        width: 200px;
+        font-size: 80%;
+}
+.seinen{
+    width: 80%;
+}
+.img-card{
+    height: 200px;
+    width: 150px;
+}
 }
