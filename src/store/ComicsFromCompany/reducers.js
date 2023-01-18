@@ -5,7 +5,7 @@ const {obtenerComics} = comicActions
 
 const initialState = { comics: [] }
 
-const comicReducer = createReducer(
+const comicComp = createReducer(
     initialState, 
     (builder) => {
         builder.addCase(
@@ -21,4 +21,4 @@ const comicReducer = createReducer(
    }
 )
 
-export default comicReducer
+export default comicComp

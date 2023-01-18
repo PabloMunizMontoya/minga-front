@@ -4,7 +4,6 @@ import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import { useEffect, useState } from 'react'
 import comicActions from '../../store/ComicsFromCompany/actions'
-import traerComicsdeCategoryActions from '../../store/ComicsFromCategories/actions'
 import FilterCategory from './FIlterCategory'
 import {useParams} from 'react-router-dom'
 const { obtenerComics } = comicActions
@@ -16,7 +15,7 @@ const ComicsFromCompany = () => {
    // const {traerComicsdeCategory} = traerComicsdeCategoryActions
    const [pages, setPages] = useState(1)
   
-   const comics = useSelector(store => store.comicReducer.comics)
+   const comics = useSelector(store => store.comicComp.comics)
    const category = useSelector (store => store.comicsFromCategoryReducer.categoriesFromAuthor)
    const {id} = useParams()
    //console.log(id);
