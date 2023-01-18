@@ -15,7 +15,7 @@ const ComicsCards = () => {
              {comics?.map((card, index) => {
                 
                 return (
-                 <Anchor to= {`/comics/${card._id}`} key={index} className="card">
+                 <Anchor to= {`/comic/${card._id}`} key={index} className="card">
                     <div className="rectangle">
                     </div>    
                             <div className="textCard">

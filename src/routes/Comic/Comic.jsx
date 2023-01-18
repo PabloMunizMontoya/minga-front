@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Chapters from '../../components/Chapters/Chapters.jsx';
 import comicAction from '../../store/comic/actions.js';
 import { useParams } from 'react-router-dom';
-import NavBar from '../../routes/pages/NavBar'
+import NavBar from '../../layouts/navbar/NavBar'
 import './comic.css'
 
 const {getComic} = comicAction
@@ -28,8 +28,10 @@ useEffect(() => {
 },[])
 const {id} = useParams()
   return (
+    <>
+    <NavBar/>
     <div>
-      <NavBar/>
+     
       <div className='content'>
       <img className='comicImage' src={comic.comics.response?.photo} alt="" />
       <div className='titlecenter'>
@@ -64,5 +66,6 @@ const {id} = useParams()
       }
       </div>
     </div>
+    </>
   )
 }

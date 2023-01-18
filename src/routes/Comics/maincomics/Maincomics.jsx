@@ -4,7 +4,7 @@ import ComicsCategories from "../../../components/comics/ComicsCategories";
 import { useDispatch, useSelector } from "react-redux";
 import comicsActions from "../../../store/comics/actions";
 import ComicsCards from "../../../components/comics/ComicsCards";
-
+import Navbar from "../../../layouts/navbar/NavBar";
 const { getComics } = comicsActions;
 
 const Maincomics = () => {
@@ -67,6 +67,9 @@ const Maincomics = () => {
 
     return (
         <main className="main">
+            <div className="nav">
+            <Navbar/>
+            </div>
             <div className="main-background">
                 <div className="section2">
                     <h1>COMICS</h1>

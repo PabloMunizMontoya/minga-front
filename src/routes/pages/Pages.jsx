@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import chapterActions from "../../store/chapter/actions";
 import { useParams, useNavigate } from "react-router-dom";
-import Navbar from "./NavBar";
-import "./navbar.css";
+import Navbar from "../../layouts/navbar/NavBar";
 import "./pages.css";
 import { Link as Anchor } from "react-router-dom";
 
@@ -108,6 +107,7 @@ const traerPageActual = () =>{
   return (
     <>
       <Navbar />
+      <div className="header"> </div>
       <div className="container">
         <div className="titleContainer">{getChapterTitle()}</div>
         <Anchor className="back" to={`/comic/${chapterStore.chapter?.comic_id}`}>

@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-buttons{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+
+    justify-content: space-evenly;
+    margin-top: 8vh;
+}
+
+.conteiner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.seinen{
+    
+    padding: 5px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    border: none;
+    width: 12vw;
+    font-size: 1rem;
+    background-color:rgb(221, 190, 149);
+}
+
+
+.conteiner-1{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-conteiner{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+   
+}
+.contains{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 90%;
+    margin: 1rem 0;
+}
+
+.border-conteiner-1{
+    height: 70%;
+    margin-top: 7vh;
+    border-left: 6px solid rgb(146, 56, 230)
+}
+
+.left-conteiner, h3{
+    color: rgb(146, 56, 230);
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.buttons-edit{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(194, 166, 221);
+    color: rgb(146, 56, 230);
+    border: none;
+    border-radius: 20%;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 8px;
+
+
+}
+
+.buttons-delete{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(249, 202, 190);
+    color: rgb(219, 76, 40);
+    border: none;
+    border-radius: 20%;
+}
+
+.img-card{
+    display: flex;
+    justify-content: end;
+    width: 200px;
+    height: 200px;
+    border-radius: 130px 20px 20px 130px;
+    border: none;
+
+    
+}
+
+.border-conteiner-2{
+    border-left: 8px solid rgb(237, 118, 75);
+}
+
+.border-conteiner-3{
+    border-left: 8px solid rgb(56, 230, 126);
+}
+
+.title-card-2{
+    color: rgb(237, 118, 75) ;
+}
+
+.title-card-3{
+    color: rgb(56, 230, 126) ;
+}
+
+.slideshow-conteiner{
+    display: block;
+}
+
+.wrap{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    margin-top: 50px;
+    background-color: rgb(185, 185, 185);
+}
+.h2card{
+    color: black;
+}
+
+.buttonPagination{
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    border: none;
+    width: 70px;
+    height: 30px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px;
+}
+
+.conteinerButtonsPagination{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    width: 100%;
+    
+}
+
+@media (max-width: 575px){
+    .conteiner-buttons{
+        display: flex;
+        gap: 10px;
+        width: 200px;
+        font-size: 80%;
+}
+.seinen{
+    width: 80%;
+}
+.img-card{
+    height: 200px;
+    width: 150px;
+}
+}

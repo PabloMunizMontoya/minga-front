@@ -8,7 +8,7 @@ function Comics() {
     return (
         <>
         <div className='nav-container' >
-            <Navcomics/>
+            
         </div>    
             <Maincomics />
            
