@@ -29,19 +29,22 @@ export const indexRouter = createBrowserRouter([
           path :"/new-comic",
           element: <NewComic />
         },{
-          path :"/new-author",
-          element: <NewAuthor />
-        },{
-          path: "/new-chapter",
-          element: <NewChapter/>
-        },{
-          path: "/new-cia",
-          element: <NewCompany />
-        },{
           path: "/comments",
           element: <Comments />
         }
       ]
+    },
+    {
+      path :"/new-author",
+      element: <NewAuthor />
+    },
+    {
+      path: "/new-chapter",
+      element: <NewChapter/>
+    },
+    {
+      path: "/new-cia",
+      element: <NewCompany />
     },
     {
       path: "/company/:id",

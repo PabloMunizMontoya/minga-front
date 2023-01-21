@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import  alertActions from '../../store/alert/actions.js'
 import React, {useRef}  from 'react'
 import './chapters.css'
+import Navbar from '../../layouts/navbar/NavBar.jsx'
 
 export default function NewChapter() {
   const {mingaAlert} = alertActions
@@ -31,14 +32,17 @@ export default function NewChapter() {
       })
   } 
   return (
+    <>
+    <Navbar/>
     <div className='chapters'>
         <h2 className='legend'>New Chapter</h2>
-        <form onSubmit={saveData} className='form' >
+        <form onSubmit={saveData} className='formChapter' >
         <input type="text" className='input' ref={inputTitle} placeholder='Enter your title' />
         <input type="text" className='input' ref={inputPage} placeholder='Enter your chapters'/>
         <input type="number" className='input' ref={inputOrder} placeholder='Enter your page order'/>
         <input type="submit" className='submit' value="Submit" />
         </form>
     </div>
+    </>
   )
 }

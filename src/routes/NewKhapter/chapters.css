@@ -1,29 +1,29 @@
-.form{
+.formChapter{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-top: 3rem;
 }
 .chapters{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-input{
-    margin: 15px 0 15px 0;
-    width: 50vw;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background-color: rgba(128, 128, 128, 0.007);
-}
 .legend{
     color: black;
-    margin: 10px 0 10px 0
+    margin: 3rem 0 10px 0
 
 }
 .input{
     color: black;
+    margin: 15px 0 15px 0;
+    width: 50vw;
+    border: 1px grey solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: rgba(128, 128, 128, 0.007);
 }
 .submit{
     border: none;

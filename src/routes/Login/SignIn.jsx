@@ -35,7 +35,7 @@ const SignIn = () => {
                 <Navbar/>
             </div>
             <div className='box'>
-                <form action="post" className='grow col flex'>
+                <form action="post" className='grow col flex formuser'>
                     <fieldset>
                         <label htmlFor="mail">Mail</label>
                         <input className='black' type="text" placeholder='Email'id='mail' ref={mail}/>
