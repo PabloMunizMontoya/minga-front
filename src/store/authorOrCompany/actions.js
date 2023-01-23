@@ -26,11 +26,11 @@ const update = createAsyncThunk(
 
 const disable = createAsyncThunk(
     "disableAuthor",
-    async({token, name}) => {
+    async({token, name, active}) => {
         try{
             let url = `http://localhost:8000/api/${name}/me`
             let headers = {headers: {'Authorization':`Bearer ${token}`}}
-            const response = await axios.put(url, {active:false}, headers)
+            const response = await axios.put(url, {active: active}, headers)
             return {
                 success: {author: response.data},
                 response: "Your account was succesfully deleted"

@@ -22,7 +22,7 @@ export default function Alerts() {
         })
     } */
     if(view){
-      toast((typeof messages === "string") ? messages :  messages.map(message => message.message).join(','),
+      toast((typeof messages === "string") ? messages :  messages?.map(message => message.message).join(','),
       {
         position: "top-right",
         autoClose: 5000,

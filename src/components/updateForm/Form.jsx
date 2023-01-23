@@ -5,6 +5,8 @@ import updateActions from '../../store/authorOrCompany/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import alertActions from '../../store/alert/actions'
 import { Link as Anchor } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
 const {update, disable} = updateActions
 const {mingaAlert} = alertActions
 
@@ -14,6 +16,7 @@ export default function Form(props) {
     let { token } = useSelector(store => store.auth)
     const dispatch = useDispatch()
     const dataForm = useRef()
+    const [active, setActive] = useState(true)
     const saveData = async(e) => {
         e.preventDefault()
         let form = {}
@@ -29,8 +32,11 @@ export default function Form(props) {
 
       }
       const disableAccount = () => {
-        dispatch(disable({token, name}))
+        setActive(!active)
       }
+      useEffect(() => {
+        dispatch(disable({token, name, active:active}))
+      }, [active])
   return (
     <form className='formProfile' ref={dataForm} onSubmit={saveData}>
         {data.map(element => {
@@ -41,7 +47,11 @@ export default function Form(props) {
             }
     })}
         <input type="submit" value="Save" className='inputSend' />
-        <Anchor className='deleteButton' onClick={disableAccount} to={"/"}>Delete</Anchor>
+        {active === true ? 
+        <Anchor className='deleteButton' onClick={disableAccount} /* to={"/"} */>Delete</Anchor> 
+        :
+        <Anchor className='activeButton' onClick={disableAccount} /* to={"/"} */>Active</Anchor>
+        }
     </form>
   )
 }

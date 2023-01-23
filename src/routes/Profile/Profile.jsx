@@ -26,13 +26,20 @@ export default function Profile() {
   return (
     <div>
         <Navbar/>
-        <div className='editContent'>
-            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profileImg"  className='profileImage'/>
-        </div>
+
+        {is_author || is_company ?         
         <div className='contentForm'>
+              <div className='editContent'>
+                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profileImg"  className='profileImage'/>
+              </div>
             <Form data={data} name={name}/>
             <Alerts/>
         </div>
+        :
+          <div>
+                    <h2 className='noEdit'>You need to be an author or a company to edit your data</h2>
+          </div>
+        }
     </div>
   )
 }
