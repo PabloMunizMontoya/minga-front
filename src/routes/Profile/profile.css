@@ -5,9 +5,8 @@
 
 .profileImage{
     margin-top: 5rem;
-    height: 20vh;
-    width: 10vw;
     object-fit: contain;
+    height: 30vh;
     border-radius: 50%;
 }
 .contentForm{
@@ -41,6 +40,9 @@
     font-size: 1rem;
     cursor: pointer;
 }
+.inputSend:hover{
+    background-color: #279c71;
+}
 .deleteButton{
     width: 35%;
     height: 7vh;
@@ -56,24 +58,28 @@
     align-items: center;
     justify-content: center;
 }
-.activeButton{
-    width: 35%;
-    height: 7vh;
-    border-radius: 50000px;
-    text-align: center;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #34D399;
-    color: #ffffff;;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.deleteButton:hover{
+    background-color: #f5b6b4;
 }
 .noEdit{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40vh;
+}
+@media (min-width: 320px) and (max-width: 425px){
+    .profileImage{
+        height: 100%;
+        width: 20vw;
+        border-radius: 50%;
+    }
+    .inputProfile{
+        width: 100%;
+    }
+    .formProfile{
+        width: 70%;
+    }
+}
+@media (min-widht: 768px) and (max-width: 1440px){
+
 }

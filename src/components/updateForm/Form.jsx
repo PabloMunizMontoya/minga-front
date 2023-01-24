@@ -4,19 +4,27 @@ import '../../routes/Profile/profile.css'
 import updateActions from '../../store/authorOrCompany/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import alertActions from '../../store/alert/actions'
-import { Link as Anchor } from 'react-router-dom'
+
 import { useState } from 'react'
-import { useEffect } from 'react'
-const {update, disable} = updateActions
+import ModalConfirmation from './Modal-confirmation'
+const {update} = updateActions
 const {mingaAlert} = alertActions
 
 export default function Form(props) {
     let {data, name} = props
-    let updateStore = useSelector((store) => store.data)
+    const [isModalOpen, setIsModalOpen] = useState(false);
     let { token } = useSelector(store => store.auth)
     const dispatch = useDispatch()
     const dataForm = useRef()
-    const [active, setActive] = useState(true)
+
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+
+
     const saveData = async(e) => {
         e.preventDefault()
         let form = {}
@@ -31,12 +39,8 @@ export default function Form(props) {
         }
 
       }
-      const disableAccount = () => {
-        setActive(!active)
-      }
-      useEffect(() => {
-        dispatch(disable({token, name, active:active}))
-      }, [active])
+
+
   return (
     <form className='formProfile' ref={dataForm} onSubmit={saveData}>
         {data.map(element => {
@@ -47,11 +51,8 @@ export default function Form(props) {
             }
     })}
         <input type="submit" value="Save" className='inputSend' />
-        {active === true ? 
-        <Anchor className='deleteButton' onClick={disableAccount} /* to={"/"} */>Delete</Anchor> 
-        :
-        <Anchor className='activeButton' onClick={disableAccount} /* to={"/"} */>Active</Anchor>
-        }
+        <button className='deleteButton' onClick={openModal}>Delete</button> 
+        <ModalConfirmation isOpen={isModalOpen} name={name}/>
     </form>
   )
 }

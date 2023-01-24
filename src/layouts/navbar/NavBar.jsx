@@ -31,6 +31,7 @@ const Navbar = () => {
             <Anchor className="anchor" to={"/new-author"}>New Author</Anchor>
             <Anchor className="anchor" to={"/new-chapter"}>New Chapter</Anchor>
             <Anchor className="anchor" to={"/new-cia"}>New Company</Anchor>
+            <Anchor className="anchor" to={"/edit-profile"}>Edit Profile</Anchor>
             {is_online ? (
                 <span className="anchor" onClick={signout}>Sign Out</span>
             ) : ( <>
