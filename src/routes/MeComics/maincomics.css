@@ -40,7 +40,7 @@ h1{
     font-size: small;
   }
 
-   .mainComics{
+   .mainn{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -48,8 +48,8 @@ h1{
     align-items: center;
   } 
 
-  .main-background{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/backgorundcomic.jpg");
+  .main-b{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/assets/imagen15.png");
     background-position: center;
     height: 90vh;
     width: 100vw;
@@ -71,6 +71,7 @@ h1{
   }
 
   .search-text-input{
+    display: none;
     padding: 0px 0px 0px 80px ;
     margin: 10px 0;
     border: 2px solid #eee;

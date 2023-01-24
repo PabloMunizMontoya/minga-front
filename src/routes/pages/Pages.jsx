@@ -18,7 +18,6 @@ function Pages() {
 
   const chapterStore = useSelector((state) => state?.pages);
   const comicId = useSelector((state) => state?.chapters?.chapter?.comic_id);
-  console.log(comicId);
 
   const dispatch = useDispatch();
   const navigation = useNavigate();

@@ -66,7 +66,7 @@ const Maincomics = () => {
  } */
 
     return (
-        <main className="main">
+        <main className="mainComics">
             <div className="nav">
             <Navbar/>
             </div>
