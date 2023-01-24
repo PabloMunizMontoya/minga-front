@@ -6,11 +6,13 @@ import myComicsAction from '../../store/mycomics/actions'
 import Swal from 'sweetalert2';
 import axios from "axios";
 
+
 const ComicsCards = () => {
   const { getMycomics } = myComicsAction
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const token = localStorage.getItem("token")
+
 
   const deleted = () => {
     Swal.fire({
@@ -21,6 +23,7 @@ const ComicsCards = () => {
       timer: 1500
     })
   }
+
   const deleteComics = async (id) => {
     try{
       const headers = {header: {
@@ -37,6 +40,7 @@ const ComicsCards = () => {
   }
   
   const handleClick = (e) => {
+
     Swal.fire({
         title: "Delete",
         text: "Are you sure?",
@@ -54,11 +58,13 @@ const ComicsCards = () => {
         } else {
             // Dijeron que no
             console.log("*Comics not delete*");
+
         }
     });
   };
 
- 
+
+
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -88,6 +94,7 @@ const ComicsCards = () => {
                 <button className="butonEdit" onClick={openModal}>Edit</button>
                 <Modal isOpen={isModalOpen} onClose={closeModal} />
                 <button className="butonDelete" value={card._id} onClick={handleClick}>Delete</button>
+
               </div>
             </div>
             <div className="divCard">
