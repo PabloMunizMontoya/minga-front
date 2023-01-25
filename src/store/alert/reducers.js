@@ -6,7 +6,8 @@ const {mingaAlert} = alertActions
 
 const initialState = {
     view: false,
-    messages: ""
+    messages: "",
+    success: ''
 }
 
 const alertReducer = createReducer(
@@ -18,7 +19,8 @@ const alertReducer = createReducer(
                 console.log(action) 
                     let newState = {
                         view: true,
-                        messages: action.payload
+                        messages: action.payload.messages,
+                        success: action.payload.success
                     }
                     return newState
                 }

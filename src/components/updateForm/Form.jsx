@@ -4,11 +4,12 @@ import '../../routes/Profile/profile.css'
 import updateActions from '../../store/authorOrCompany/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import alertActions from '../../store/alert/actions'
-
 import { useState } from 'react'
 import ModalConfirmation from './Modal-confirmation'
-const {update} = updateActions
+
+
 const {mingaAlert} = alertActions
+const {update} = updateActions
 
 export default function Form(props) {
     let {data, name} = props
@@ -23,25 +24,29 @@ export default function Form(props) {
     const closeModal = () => {
       setIsModalOpen(false);
     };
-
-
     const saveData = async(e) => {
         e.preventDefault()
         let form = {}
         Array.from(dataForm.current).forEach((element) => element.name && element.value && (form[element.name] = element.value))
         let response = await dispatch(update({data:form, token, name}))
-        console.log(response);
-        if(response.payload.response.data?.message){
-            dispatch(mingaAlert(response.payload.response.data.message))
+/*         console.log(response.payload.success); */
+        console.log(response.payload.response.data)
+        if(response.payload.response.data?.success){
+          let messages = response.payload.response.data.message
+          dispatch(mingaAlert({messages, success:true}))
+
         }
         if(!response.payload.success){
-            dispatch(mingaAlert(response.payload.response))
+          let messages = (typeof response.payload.response === "string") ? response.payload.response : response.payload.response?.map(element => element.message)
+          dispatch(mingaAlert({messages, success:false}))
         }
+
 
       }
 
 
   return (
+    <>
     <form className='formProfile' ref={dataForm} onSubmit={saveData}>
         {data.map(element => {
             if(element === "date") {
@@ -51,8 +56,9 @@ export default function Form(props) {
             }
     })}
         <input type="submit" value="Save" className='inputSend' />
-        <button className='deleteButton' onClick={openModal}>Delete</button> 
         <ModalConfirmation isOpen={isModalOpen} name={name}/>
     </form>
+    <button className='deleteButton' onClick={openModal}>Delete</button> 
+    </>
   )
 }

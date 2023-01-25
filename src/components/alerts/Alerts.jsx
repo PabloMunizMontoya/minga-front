@@ -1,45 +1,29 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import Swal from 'sweetalert2'
  
 
 export default function Alerts() {
 /*     const store = useSelector(store =>  console.log(store)) */
     let view = useSelector(store => store.alertReducer.view)
     let messages = useSelector(store => store.alertReducer.messages)
+    let success = useSelector(store => store.alertReducer.success)
     console.log(view)
-/*     const alerta = () => {
-      toast('notificacion', {  
-        position: "top-center",
-        autoClose: false,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        })
-    } */
+    console.log(messages)
+    console.log(success)
     if(view){
-      toast((typeof messages === "string") ? messages :  messages?.map(message => message.message).join(','),
-      {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        })
+      Swal.fire(
+        `${success ? "Good job" : "Error"}`,
+        `${success ? (typeof messages === "string") ? messages :  messages.map(message => message.message).join() : messages}`,
+        `${success ? "success" : "error"}`
+      )
+
+
     }
 
   return (
 
     <div>
-        <ToastContainer/>
-
     </div>
 
   )

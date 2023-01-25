@@ -16,6 +16,7 @@ const update = createAsyncThunk(
                 response: {data: response.data}
             }
         } catch(error){
+            console.log(error.response.data.response)
             return {
                 success: false,
                 response: error.response.data.response

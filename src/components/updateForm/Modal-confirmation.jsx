@@ -3,6 +3,7 @@ import './modalconfirm.css'
 import { Link as Anchor } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import updateActions from '../../store/authorOrCompany/actions'
+import Swal from 'sweetalert2'
 const {disable} = updateActions
 
 const ModalConfirmation = ({ isOpen, name }) => {
