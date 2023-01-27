@@ -9,6 +9,8 @@ import comicComp from "./ComicsFromCompany/reducers.js";
 import comicsFromCategoryReducer from './ComicsFromCategories/reducers.js'
 import authReducer from './auth/reducers';
 import myComicReducer from "./mycomics/reducers.js";
+import category from './mycomics/reducers.js'
+
 
 const store = configureStore({
   
@@ -22,7 +24,9 @@ const store = configureStore({
         comicComp ,
         comicsFromCategoryReducer,
         auth: authReducer,
-        myComic: myComicReducer
+        myComic: myComicReducer,
+        category
+
     }
   })
 
