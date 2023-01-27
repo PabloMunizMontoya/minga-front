@@ -1,0 +1,106 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(121, 121, 121, 0.093);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .selsects, .opt{
+  border-radius: 20px;
+  color:black;
+  width: 250px;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 10px;
+  
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-body {
+    font-size: 18px;
+  }
+  .h2form{
+    font-weight: normal;
+    color: black;
+    font-size: 25px;
+
+  }
+  .modal-close-btn {
+    border: none;
+    background-color: #f44336;
+    width: 12vw;
+    height: 6vh;
+    border-radius: 50px;
+    margin-bottom: 5px;
+
+  }
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.labelform{
+  width: 250px;
+}
+
+.chapters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.legend{
+    color: black;
+    margin: 10px 0 10px 0;
+}
+.inputt{
+    color:black;
+    width: 250px;
+    margin: 15px 0 15px 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: rgba(0, 0, 0, 0.007) !important;
+}
+.ssubmit{
+    border: none;
+    background-color: #34D399;
+    width: 12vw;
+    height: 6vh;
+    border-radius: 50px;
+}
+.ssubmit:hover{
+    background-color: rgb(83, 82, 82);
+}
+@media (min-width: 810px) and (max-width: 1080px){
+   
+
+}
+@media (min-width: 412px) and (max-width: 1080px){
+    
+
+}
+
+@media (max-width: 800px){
+  .modal-content{
+    width: 100%;
+    height: 100%;
+  }
+  .opt, .selsects{
+    width: 32vw;
+  }
+
+}

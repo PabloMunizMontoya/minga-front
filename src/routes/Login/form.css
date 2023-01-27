@@ -54,14 +54,14 @@ label{
 input{
     width: 100%;
     padding: .5rem;
-    border-radius: 1rem;
-    border:1px solid #0060df;
+   
+    border:1px solid #000000;
 }
 input[type="submit"]{
     color: #222;
     font-weight: bold;
-    width: auto;
-    border:1px solid #1F1F1F;
+    border:1px solid #1f1f1f00;
+
 }
 fieldset{
     border: none;

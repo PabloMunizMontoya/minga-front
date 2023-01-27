@@ -28,6 +28,8 @@ const Navbar = () => {
             <h2 className={`otracosa ${isOpen && "open"}`}>pepito@petito.com</h2>
             <Anchor className="anchor" to={"/"}>Home</Anchor>
             <Anchor className="anchor" to={"/comics"}>Comics</Anchor>
+            <Anchor className="anchor" to={"/comics/me"}>My Comics</Anchor>
+
             <Anchor className="anchor" to={"/new-author"}>New Author</Anchor>
             <Anchor className="anchor" to={"/new-chapter"}>New Chapter</Anchor>
             <Anchor className="anchor" to={"/new-cia"}>New Company</Anchor>
