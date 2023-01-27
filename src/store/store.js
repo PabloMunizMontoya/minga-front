@@ -26,7 +26,6 @@ const store = configureStore({
         auth: authReducer,
         myComic: myComicReducer,
         category
-
     }
   })
 

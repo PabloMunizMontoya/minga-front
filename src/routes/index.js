@@ -13,7 +13,6 @@ import Comic from "./Comic/Comic.jsx";
 import Pages from "./pages/Pages.jsx";
 import MeComics from "./MeComics/MeComics";
 
-
 import SignIn from './Login/SignIn'
 import SignUp from './Login/SignUp'
 
