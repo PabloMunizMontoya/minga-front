@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./maincomics.css";
 import ComicsCategories from "./ComicsCategories";
 import { useDispatch, useSelector } from "react-redux";
+
 import ComicsCards from "./ComicsCards";
 import Navbar from "../../layouts/navbar/NavBar";
 import myComicsAction from "../../store/mycomics/actions";
@@ -51,6 +52,7 @@ const [categories, setCategories] = useState([])
 
 console.log(myComics); 
 
+
   return (
     <main className="mainn">
       <div className="nav">
@@ -59,6 +61,7 @@ console.log(myComics);
       <div className="main-b">
         <div className="section2">
           <h1>{myMail}</h1>
+
         </div>
       </div>
       <div className="comics-containerr">

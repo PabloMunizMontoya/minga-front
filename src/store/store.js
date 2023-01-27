@@ -11,6 +11,7 @@ import authReducer from './auth/reducers';
 import myComicReducer from "./mycomics/reducers.js";
 import category from './mycomics/reducers.js'
 
+
 const store = configureStore({
   
     reducer: {
@@ -25,6 +26,7 @@ const store = configureStore({
         auth: authReducer,
         myComic: myComicReducer,
         category
+
     }
   })
 

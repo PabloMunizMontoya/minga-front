@@ -9,11 +9,13 @@
     align-items: center;
     justify-content: center;
   }
+
   .selsects, .opt{
   border-radius: 20px;
   color:black;
   width: 250px;
   }
+  
   .modal-content {
     background-color: white;
     border-radius: 10px;
@@ -100,4 +102,5 @@
   .opt, .selsects{
     width: 32vw;
   }
+
 }
