@@ -7,7 +7,7 @@ import alertActions from '../../store/alert/actions'
 import { useState } from 'react'
 import ModalConfirmation from './Modal-confirmation'
 
-
+const {mingaAlert, mingaAlertFalse} = alertActions
 const {mingaAlert} = alertActions
 const {update} = updateActions
 

@@ -7,7 +7,14 @@ const mingaAlert = createAction(
         return {payload: datos}
     }
 )
-const alertActions = {mingaAlert}
+const mingaAlertFalse = createAction(
+    "mingaAlertFalse",
+    (datos) => {
+        console.log(datos)
+        return {payload: datos}
+    }
+)
+const alertActions = {mingaAlert, mingaAlertFalse}
 
 export default alertActions
 
