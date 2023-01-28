@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import alertActions from '../../store/alert/actions'
 const {mingaAlertFalse} = alertActions
 
+
 export default function Alerts() {
 /*     const store = useSelector(store =>  console.log(store)) */
     const dispatch = useDispatch()
@@ -20,9 +21,12 @@ export default function Alerts() {
         `${success ? (typeof messages === "string") ? messages :  messages.map(message => message.message).join() : messages}`,
         `${success ? "success" : "error"}`
       )
+
     if(view){
       dispatch(mingaAlertFalse({view: false}))
     }
+
+
 
     }
 
