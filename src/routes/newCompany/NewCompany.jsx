@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import axios from 'axios'
 import  alertActions from '../../store/alert/actions.js'
 import { useDispatch } from 'react-redux'
+import Navbar from '../../layouts/navbar/NavBar'
 
 const NewCompany = () => {
   const {mingaAlert} = alertActions
@@ -33,8 +34,11 @@ const inputId = useRef("")
   }
 
   return (
-    <form className='form' onSubmit={guardarData}>
-        <h2>New company</h2>
+    <>
+  <Navbar/>
+    <div className='companyContent'>
+          <form className='form' onSubmit={guardarData}>
+        <h2 className='legend'>New company</h2>
         <div>
              <label htmlFor='name'>
             <input ref={inputName} className='form-item' type="text" id="name" placeholder='Insert your name'/>
@@ -68,6 +72,8 @@ const inputId = useRef("")
       </div>
         
     </form>
+    </div>
+    </>
   )
   }
 

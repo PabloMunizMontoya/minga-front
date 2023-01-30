@@ -20,7 +20,7 @@ const ComicsCards = () => {
                     </div>    
                             <div className="textCard">
                                 <h2 className="tittleCard">{card.title}</h2>
-                                {/* <p className="categoryText">{card.category.name}</p>   */}
+                                <p className="categoryText">{card.category.name}</p>  
                             </div>
 
                             <div className="divCard">

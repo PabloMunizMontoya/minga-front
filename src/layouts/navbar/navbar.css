@@ -5,7 +5,13 @@
   height: 150vh;
   z-index: 10;
 }
+.otracosa{
+    display: none;
+}
 
+.otracosa.open{
+    display: inline;
+}
 
 .navbar{
     height: 60px;
@@ -40,7 +46,7 @@ font-size: 20px;
 letter-spacing: 0;
 text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
     display: flex;
-    margin: 20px;
+    margin: 10px;
     position: relative;
     text-decoration: none;
 }
@@ -48,7 +54,7 @@ text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1
     display: none;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 764px) {
     .nav_items a{
     }
         .nav_items{

@@ -62,14 +62,12 @@ function handleSendComment (event) {
           </div>
           </div>
         ))}
-
       <form /*  ref={formRef} */ onSubmit={handleSendComment} id="form">
         <input id="input" className="textareaComments"
         placeholder="Say something here..."
           type="text"
           ref={inputComment}
           value={newComment}
-          
           onChange={event => setNewComment(event.target.value)}
         />
         <button onClick={emptyInput}  className="inputComments" type="submit"><img  className="send" src="/assets/enviar.png" alt="" /></button>

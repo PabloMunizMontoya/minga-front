@@ -21,7 +21,9 @@ console.log(chaptersStore);
     if (chapterStore) {
       dispatch(getChapterDetails(chapterStore));
     }
-  }, [chapterStore]);
+    
+    
+  }, [chapterStore,]);
   
 
   return ( 

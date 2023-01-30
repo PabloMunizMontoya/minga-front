@@ -10,6 +10,7 @@ import comicsFromCategoryReducer from './ComicsFromCategories/reducers.js'
 import allcomicsreducer from "./getAllComics/reducer.getAllComics.js";
 import chapterFromComicReducer from "./ChaptersFromComic/reducer.ChaptersFromComics.js";
 import getIdReducer from "./getIdAction/getIdReducer.js"
+import authReducer from './auth/reducers';
 
 const store = configureStore({
     reducer: {
@@ -23,7 +24,8 @@ const store = configureStore({
         comicsFromCategoryReducer,
         allComics : allcomicsreducer ,
         chapterFromComicReducer,
-        id: getIdReducer 
+        id: getIdReducer, 
+        auth: authReducer
     }
   })
 

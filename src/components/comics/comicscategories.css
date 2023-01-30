@@ -2,11 +2,10 @@
     
     display: flex;
     width: 70vw;
-    height: 30px;
+    height: 15vh;
     justify-content: space-between;
 }
 .button1{
-    height: 5vh;
     border-radius: 1rem;
     background-color: rgb(221, 190, 149);
     border: none;

@@ -3,6 +3,7 @@ import './newauthor.css'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import  alertActions from '../../store/alert/actions.js'
+import Navbar from '../../layouts/navbar/NavBar'
 
 export default function Newauthor() {
 const { mingaAlert } = alertActions
@@ -35,7 +36,9 @@ let guardarData= (e) => {
 
 }
   return (
-    <div>
+    <>
+    <Navbar/>
+    <div className='authorContainer'>
       <h1 className='h1Author'>New Author</h1>
     <form className='formAuthor' onSubmit = {guardarData}>
       <label >
@@ -94,5 +97,6 @@ let guardarData= (e) => {
         </label>
     </form>
     </div>
+    </>
   )
 }

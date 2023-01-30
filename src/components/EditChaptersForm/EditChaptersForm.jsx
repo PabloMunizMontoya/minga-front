@@ -9,6 +9,10 @@ import InputData from '../inputData/inputData'
 import chapterActions from '../../store/chapter/actions'
 import RenderInfoChapter from "../RenderInfoChapter/RenderInfoChapter";
 
+const { updateChapter } = chapterActions
+const { deleteChapter } = chapterActions
+const { getChapterDetails } = chapterActions
+
 const EditChaptersForm =() => {
 
   const chaptersStore = useSelector(
@@ -16,8 +20,9 @@ const EditChaptersForm =() => {
   );
    console.log(chaptersStore);
 
+  const data = useRef("") 
   const inputData = useRef("");
-  const inputCategory = useRef("");
+ 
   const [category, setCategory] = useState("");
   const { editChapter } = chapterActions;
 
@@ -32,16 +37,24 @@ const EditChaptersForm =() => {
     e.preventDefault();
 
     const chapter = {
-      comic_id: chaptersStore.comic_id,
-      id: chaptersStore._id, 
-      title: chaptersStore.title,
-      order: chaptersStore.order,
-      data: inputData.current.value,
-      category: category,
+      
+      _id: chaptersStore[0]._id, 
+       [data.current.value] : inputData.current.value
+      
     }; 
-    await dispatch(editChapter(chapter));
-    await dispatch(chaptersStore._id)
+    await dispatch(updateChapter(chapter));
+    await dispatch(getChapterDetails(chapter._id))
   }; 
+  const deleteChap = async (e) => {
+    e.preventDefault();
+    const chapter = {
+      
+      _id: chaptersStore[0]._id, 
+       [data.current.value] : inputData.current.value
+      
+    };
+    await dispatch(deleteChapter(chapter)); 
+  }
 
   return (
     <div className='container'>
@@ -52,7 +65,7 @@ const EditChaptersForm =() => {
             <InputChapter/>
             <InputData/>
             <div>
-            <select name="categories" className="inpFormSelect"  onChange={getValueCategory} >
+            <select name="categories" className="inpFormSelect"  onChange={getValueCategory} ref ={data} >
               <option className="default-select">
                 Selec data
               </option>
@@ -69,9 +82,8 @@ const EditChaptersForm =() => {
               ref={inputData}
             ></input>
           </div>
-            
             <input type="submit" className='button_edit' value="Edit" onClick={editsChapter} />
-            <input type="submit" className='button_delete' value="Delete" />
+            <input type="submit" className='button_delete' onClick={deleteChap} value="Delete" />
         </form>
         </div>
         <div className="">

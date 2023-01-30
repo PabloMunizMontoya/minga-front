@@ -2,7 +2,7 @@ import chapterActions from "./actions";
 import { createReducer } from "@reduxjs/toolkit";
 
 
-const { newChapter, getChapter ,getChapterDetails, getChapters, getChapterbyorderandcomic } = chapterActions;
+const { newChapter, getChapter ,getChapterDetails, getChapters, getChapterbyorderandcomic, deleteChapter, } = chapterActions;
 
 const initialState = { chapters: [], message: "", chapter: [] };
 
@@ -29,6 +29,7 @@ const chapterReducer = createReducer(initialState, (builder) =>  {
         }
         return newState
     })
+    
     .addCase(getChapterDetails.rejected, (state, action) => {
         let newState = {
             message: "Error Loading Chapter"
@@ -62,7 +63,11 @@ const chapterReducer = createReducer(initialState, (builder) =>  {
             }
             return newState
 }
-) 
+)
+
+.addCase(deleteChapter.fulfilled, (state,action ) =>{
+    return {...state}
+})
 })
 
 export default chapterReducer

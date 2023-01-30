@@ -12,9 +12,13 @@ import { Link as Anchor } from "react-router-dom";
 const { getChapterDetails, getChapters } = chapterActions;
 
 function Pages() {
-  const [current, setCurrent] = useState(JSON.parse(localStorage.getItem('page')));
+  const [current, setCurrent] = useState(
+    JSON.parse(localStorage.getItem("page"))
+  );
 
   const chapterStore = useSelector((state) => state?.pages);
+  const comicId = useSelector((state) => state?.chapters?.chapter?.comic_id);
+  console.log(comicId);
 
   const dispatch = useDispatch();
   const navigation = useNavigate();
@@ -22,47 +26,46 @@ function Pages() {
   console.log(chapterStore);
   useEffect(() => {
     dispatch(getChapterDetails(id));
-    dispatch(getChapters("63bf08f6579da57eb3ad5fb2"));
-  }, [id]);
+    dispatch(getChapters(comicId));
+  }, [id,comicId]);
 
   console.log(chapterStore.chapter?.comic_id);
+/*   console.log('capitulo 5',chapterStore?.chapter.pages[5]) */
   const getPagesImages = () => {
     if (chapterStore.chapter?.pages?.length === 0) {
       return <p>Loading...</p>;
     } else {
       return (
-
-          <img
-            className="imagePage"
-            src={chapterStore?.chapter?.pages?.[current]}
-            alt="Comic Page"/>
+        <img
+          className="imagePage"
+          src={chapterStore?.chapter?.pages?.[current]}
+          alt="Comic Page"
+        />
       );
     }
   };
 
- const pageActual = () => {
-  const currenActual = current
-  let page =  localStorage.setItem("page", JSON.stringify(currenActual));
-  return page
- } 
- pageActual();
+  const pageActual = () => {
+    const currenActual = current;
+    let page = localStorage.setItem("page", JSON.stringify(currenActual));
+    return page;
+  };
+  pageActual();
 
-const traerPageActual = () =>{
-    let lastPageRead =  JSON.parse(localStorage.getItem("page"));
-    
-    return lastPageRead
- 
- }
- traerPageActual()
+  const traerPageActual = () => {
+    let lastPageRead = JSON.parse(localStorage.getItem("page"));
 
+    return lastPageRead;
+  };
+  traerPageActual();
 
   const next = () => {
     console.log(chapterStore);
     if (current >= chapterStore.chapter?.pages?.length - 1) {
       console.log("end chapter");
 
-      const nextchaptes = chapterStore.chapters.response.find(
-        (chapter) => chapterStore.chapter?.order + 1 === chapter.order
+      const nextchaptes = chapterStore?.chapters.response.find(
+        (chapter) => chapterStore?.chapter?.order + 1 === chapter.order
       );
 
       navigation(`/pages/${nextchaptes._id}`);
@@ -70,27 +73,24 @@ const traerPageActual = () =>{
     }
     if (current !== chapterStore.chapter.pages?.length - 1) {
       setCurrent(current + 1);
-      console.log(current)
+      console.log(current);
     }
-
   };
-  
+
   const prev = () => {
     if (current > 0) {
       setCurrent(current - 1);
-      console.log(current)
-    }
-    else if (chapterStore.chapter?.order === 1) {
+      console.log(current);
+    } else if (chapterStore.chapter?.order === 1) {
       navigation(`/comic/${chapterStore.chapter.comic_id}`);
-    }
-    else if (current === 0) {
+    } else if (current === 0) {
       const prevchaptes = chapterStore.chapters.response.find(
         (chapter) => chapterStore.chapter?.order - 1 === chapter.order
       );
       navigation(`/pages/${prevchaptes._id}`);
       setCurrent(prevchaptes.pages?.length - 1);
-  }
-  }
+    }
+  };
 
   const getChapterTitle = () => {
     if (chapterStore?.chapter?.length === 0) {
@@ -109,11 +109,14 @@ const traerPageActual = () =>{
       <Navbar />
       <div className="header"> </div>
       <div className="container">
-        
         <div className="titleContainer">{getChapterTitle()}</div>
-        <Anchor className="back" to={`/comic/${chapterStore.chapter?.comic_id}`}>
-          <img className="imgBack" src="/assets/back.png" alt="" /> Back to Chapters
-        </Anchor> 
+        <Anchor
+          className="back"
+          to={`/comic/${chapterStore.chapter?.comic_id}`}
+        >
+          <img className="imgBack" src="/assets/back.png" alt="" /> Back to
+          Chapters
+        </Anchor>
         <div className="comicPage">
           {getPagesImages()}
           <div className="leftButton" onClick={prev}></div>
