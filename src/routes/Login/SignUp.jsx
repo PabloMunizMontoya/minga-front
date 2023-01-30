@@ -47,7 +47,7 @@ const SignUp = () => {
                         <input className='black' type="text" placeholder="Photo" ref={photo}/>
                         <label htmlFor="">Password</label>
                         <input className='black' type="password" placeholder="Password" ref={password}/>
-                        <input onClick={(e)=>captureData(e)} type="submit" value="enviar" />
+                        <input onClick={(e)=>captureData(e)} type="submit" value="enviar" className="inputSubmitLog" />
                     </fieldset>
                     <div>
                         <p>Do you already have an account? then</p>

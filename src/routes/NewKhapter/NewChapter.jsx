@@ -23,9 +23,7 @@ export default function NewChapter() {
       axios.post("http://localhost:8000/api/chapters", datos)
       .then( res =>  dispatch(mingaAlert("Done")) )
       .catch(error => {
-
         /* DESPACHA LA ALERTA */
-
         dispatch(mingaAlert(error.response.data.response))
 /*         console.log(error.response.data.response) */
         //utilizo el hook useDispatch para despachar los errores hacia la accion

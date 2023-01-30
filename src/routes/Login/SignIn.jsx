@@ -41,7 +41,7 @@ const SignIn = () => {
                         <input className='black' type="text" placeholder='Email'id='mail' ref={mail}/>
                         <label htmlFor="pass">Password</label>
                         <input className='black' type="password" id='pass' placeholder='password' ref={password}/>
-                        <input onClick={captureData} type="submit" value="enviar" />
+                        <input onClick={captureData} type="submit" value="enviar" className="inputSubmitLog"/>
                     </fieldset>
                     <div>
                         <p>Still don't have an account?</p>
