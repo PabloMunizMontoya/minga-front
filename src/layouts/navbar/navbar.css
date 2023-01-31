@@ -5,6 +5,9 @@
   height: 150vh;
   z-index: 10;
 }
+.links {
+    display: flex;
+}
 .otracosa{
     display: none;
 }

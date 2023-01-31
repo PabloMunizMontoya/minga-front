@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+  }
+  
+  .section-welcome {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+  .button-start {
+    height: min-content;
+    margin-top: 2rem;
+    font-size: 1.5vw;
+    padding: .6rem 1rem;
+    background-color: #4338ca;
+    border-radius: 10px;
+    transition: 2ms;
+  }
+  .button-start:hover {
+  background-color:   #4137ab;
+  }
+  .section-welcome h1 {
+    margin-bottom: 2rem;
+  }
+  .section-welcome h4 {
+    font-size: 1.9vw;
+  }
+  

@@ -16,6 +16,8 @@ import SignIn from './Login/SignIn'
 import SignUp from './Login/SignUp'
 import EditChapterRoute from "./EditChapter/EditChapterRoute.jsx"
 import Profile from "./Profile/Profile.jsx";
+import Welcome from "../components/welcome/Welcome.js";
+
 
 export const indexRouter = createBrowserRouter([
     {
@@ -85,7 +87,11 @@ export const indexRouter = createBrowserRouter([
     {
       path:"/edit-profile",
       element:<Profile/>
-    }
+    },
+    {
+      path:"/verify/:verify_Code",
+      element: <Welcome/> 
+  }
 
   ])
 

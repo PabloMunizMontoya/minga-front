@@ -9,7 +9,7 @@ const { getIdComic, getComicsById  } = getIdComicActions;
 const { getAllComics }=  allComicsActions
 
 const InputComic = () => {
-    const  allcomics  = useSelector((store) => store?.allComics)
+    const  allcomics  = useSelector((store) => store?.response?.allComics)
     
 
     const [idComic, setIdComic] = useState("");
@@ -39,7 +39,7 @@ const InputComic = () => {
     return (
         <>
             <div className="container-comp-input">
-                <select name="categories"onChange={getValueComic} className = "inpFormSelect"
+                {/* <select name="categories"onChange={getValueComic} className = "inpFormSelect"
                  id="categories">
                     <option>
                         Select Comic
@@ -53,7 +53,7 @@ const InputComic = () => {
                             </option>
                         )
                     }) }
-                </select>
+                </select> */}
             </div>
         </>
     );
