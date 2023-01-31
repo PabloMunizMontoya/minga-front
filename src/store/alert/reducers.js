@@ -21,15 +21,6 @@ const alertReducer = createReducer(
                                 view: true,
                                 messages: action.payload.messages,
                                 success: action.payload.success
-
-        builder.addCase(
-            mingaAlert,
-                (state, action) => {
-                console.log(action) 
-                    let newState = {
-                        view: true,
-                        messages: action.payload.messages,
-                        success: action.payload.success
                     }
                     return newState
                 }

@@ -103,6 +103,9 @@ span > a {
 .img{
   background-position: center;
   object-fit: contain;
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
 }
 
 /* Number text (1/3 etc) */
@@ -174,11 +177,7 @@ span > a {
   width: 80%;
 }
 
-img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-}
+
 .mySlides {
   width: 100%;
 }

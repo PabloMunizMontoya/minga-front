@@ -12,11 +12,11 @@ import NewCompany from "./newCompany/NewCompany.jsx";
 import Comic from "./Comic/Comic.jsx";
 import Pages from "./pages/Pages.jsx";
 import MeComics from "./MeComics/MeComics";
-
-
 import SignIn from './Login/SignIn'
 import SignUp from './Login/SignUp'
 import Profile from "./Profile/Profile.jsx";
+import SuccessPayment from "./success-payment/Success-payment.jsx";
+
 
 export const indexRouter = createBrowserRouter([
     {
@@ -81,7 +81,11 @@ export const indexRouter = createBrowserRouter([
     },
     {
       path:"/edit-profile",
-      element:<Profile/>
+      element:<Profile/>i
+    },
+    {
+      path:"/success-payment",
+      element:<SuccessPayment/>
     }
 
   ])
